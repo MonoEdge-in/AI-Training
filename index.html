@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Training · Register</title>
+<meta name="description" content="Hands-on AI workshop on 21 and 22 November 2026 at Kalika Steels, Jalna. Fee ₹3,499 inclusive of all taxes.">
+<meta property="og:title" content="AI Training · 21 & 22 November 2026">
+<meta property="og:description" content="Hands-on AI workshop at Kalika Steels, Jalna. Fee ₹3,499 inclusive of all taxes.">
+<link rel="icon" type="image/png" href="/assets/monoedge-symbol-dark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://checkout.razorpay.com/v1/checkout.js" async></script>
+<style>
+/* Tokens from the MonoEdge Systems design system (tokens.json). */
+:root {
+  color-scheme: light;
+  --monoedge-blue: #204494;
+  --ice-blue: #85a9dd;
+  --surface: #ffffff;
+  --surface-muted: #ececec;
+  --surface-raised: #f6f6f6;
+  --surface-brand: var(--monoedge-blue);
+  --ink: #000000;
+  --ink-muted: #4a4a4a;
+  --ink-accent: var(--monoedge-blue);
+  --ink-on-brand: #ffffff;
+  --border: #d4d4d4;
+  --border-strong: #6b6b6b;
+  --focus: var(--monoedge-blue);
+  --success: #1a6b3f;
+  --warning: #8a5500;
+  --danger: #a3232b;
+
+  --font-display: "Monument Extended", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+  --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 64px;
+  --radius-md: 4px; --radius-lg: 8px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --surface: #000000;
+    --surface-muted: #121212;
+    --surface-raised: #1c1c1c;
+    --ink: #ffffff;
+    --ink-muted: #b5b5b5;
+    --ink-accent: var(--ice-blue);
+    --border: #2a2a2a;
+    --border-strong: #8f8f8f;
+    --focus: var(--ice-blue);
+    --success: #5cc08a;
+    --warning: #e0a23c;
+    --danger: #f08a8a;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --surface: #000000;
+  --surface-muted: #121212;
+  --surface-raised: #1c1c1c;
+  --ink: #ffffff;
+  --ink-muted: #b5b5b5;
+  --ink-accent: var(--ice-blue);
+  --border: #2a2a2a;
+  --border-strong: #8f8f8f;
+  --focus: var(--ice-blue);
+  --success: #5cc08a;
+  --warning: #e0a23c;
+  --danger: #f08a8a;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 15px;
+  line-height: 26px;
+  -webkit-font-smoothing: antialiased;
+}
+:where(a, button, input, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+a { color: var(--ink-accent); }
+.wrap { max-width: 640px; margin: 0 auto; padding: 0 var(--space-4); }
+.label {
+  font-size: 12px; line-height: 16px; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+}
+.muted { color: var(--ink-muted); }
+[hidden] { display: none !important; }
+
+/* Hero: the one full-bleed brand ground on the page. */
+.hero {
+  background: var(--surface-brand);
+  color: var(--ink-on-brand);
+  padding: var(--space-6) 0 var(--space-7);
+}
+.hero__logo { display: block; height: 22px; width: auto; margin-bottom: var(--space-7); }
+.hero .label { color: var(--ink-on-brand); opacity: 0.85; margin: 0 0 var(--space-3); }
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(36px, 11vw, 64px);
+  line-height: 1.0;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  margin: 0 0 var(--space-5);
+}
+.facts {
+  display: grid; gap: var(--space-4);
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  margin: 0; padding: var(--space-5) 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+}
+.facts div { margin: 0; }
+.facts dt { margin: 0 0 var(--space-1); }
+.facts dd { margin: 0; font-size: 15px; line-height: 22px; font-weight: 500; }
+.facts dd span { display: block; font-weight: 400; font-size: 13px; opacity: 0.85; }
+
+main { padding: var(--space-7) 0 var(--space-8); }
+section + section { margin-top: var(--space-7); }
+
+/* Section title with the brand's eyebrow block. */
+h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 22px; line-height: 28px;
+  text-transform: uppercase;
+  margin: 0 0 var(--space-4);
+  display: flex; align-items: center; gap: var(--space-4);
+}
+h2::before {
+  content: ""; flex: none;
+  width: 0.45em; height: 1.1em;
+  background: var(--ink-accent);
+}
+.lead { font-size: 16px; line-height: 28px; margin: 0 0 var(--space-4); }
+.lead:last-child { margin-bottom: 0; }
+
+/* Card */
+.card {
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-4);
+}
+@media (min-width: 560px) { .card { padding: var(--space-6); } }
+
+/* Form */
+.field { margin-bottom: var(--space-5); }
+.field > label, .field > legend { display: block; margin: 0 0 var(--space-2); padding: 0; }
+input[type="text"], input[type="email"], input[type="tel"], textarea {
+  width: 100%;
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  font-family: var(--font-mono);
+  font-size: 16px; /* 16px stops iOS zooming into the field */
+  line-height: 24px;
+  padding: var(--space-2) var(--space-3);
+  min-height: 44px;
+}
+textarea { min-height: 132px; resize: vertical; }
+input:focus, textarea:focus { border-color: var(--focus); }
+[aria-invalid="true"] { border-color: var(--danger) !important; }
+.hint, .error { font-size: 13px; line-height: 20px; margin: var(--space-1) 0 0; }
+.hint { color: var(--ink-muted); }
+.error { color: var(--danger); }
+.row-between { display: flex; justify-content: space-between; gap: var(--space-3); }
+
+fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+.options { display: grid; gap: var(--space-3); }
+@media (min-width: 480px) { .options { grid-template-columns: 1fr 1fr; } }
+.option {
+  display: flex; gap: var(--space-3); align-items: flex-start;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  cursor: pointer;
+}
+.option:has(input:checked) { border-color: var(--ink-accent); outline: 1px solid var(--ink-accent); outline-offset: -2px; }
+.option input { margin: 5px 0 0; accent-color: var(--monoedge-blue); width: 16px; height: 16px; flex: none; }
+.option strong { display: block; font-weight: 500; }
+.option span { display: block; font-size: 13px; line-height: 20px; color: var(--ink-muted); }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
+  min-height: 48px; padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  font-family: var(--font-mono); font-size: 15px; font-weight: 500;
+  cursor: pointer; text-decoration: none;
+}
+.btn--primary { background: var(--surface-brand); color: var(--ink-on-brand); width: 100%; }
+.btn--secondary { background: transparent; color: var(--ink); border-color: var(--border-strong); width: 100%; }
+.btn[disabled] { opacity: 0.6; cursor: progress; }
+.form-foot { margin: var(--space-3) 0 0; font-size: 13px; line-height: 20px; color: var(--ink-muted); }
+
+/* Result panels */
+.panel h2 { margin-bottom: var(--space-3); }
+.panel p { margin: 0 0 var(--space-4); }
+.regid {
+  display: block;
+  margin: var(--space-2) 0 var(--space-5);
+  padding: var(--space-3) var(--space-4);
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  font-size: 22px; line-height: 28px; font-weight: 700; letter-spacing: 0.06em;
+}
+.status {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  margin: 0 0 var(--space-3);
+}
+.status::before { content: ""; width: 8px; height: 8px; border-radius: 9999px; background: currentColor; }
+.status--ok { color: var(--success); }
+.status--warn { color: var(--warning); }
+.status--bad { color: var(--danger); }
+.payto {
+  margin: 0 0 var(--space-5); padding: var(--space-4);
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md);
+  font-style: normal;
+}
+.payto p { margin: 0; }
+.actions { display: grid; gap: var(--space-3); }
+.spinner {
+  width: 16px; height: 16px; border-radius: 9999px; flex: none;
+  border: 2px solid currentColor; border-right-color: transparent;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .spinner { animation-duration: 2.4s; } }
+
+footer { border-top: 1px solid var(--border); padding: var(--space-5) 0 var(--space-7); }
+footer p { margin: 0; font-size: 13px; line-height: 20px; color: var(--ink-muted); }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <img class="hero__logo" src="/assets/monoedge-lockup-horizontal-light.png" alt="MonoEdge" width="632" height="91">
+    <p class="label">Hands-on workshop · In person</p>
+    <h1>AI Training</h1>
+    <dl class="facts">
+      <div><dt class="label">Dates</dt><dd>21 &amp; 22 November 2026</dd></div>
+      <div><dt class="label">Venue</dt><dd>Kalika Steels, Jalna</dd></div>
+      <div><dt class="label">Fee</dt><dd>₹3,499<span>Inclusive of all taxes</span></dd></div>
+    </dl>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <section aria-labelledby="about-title">
+      <h2 id="about-title">The workshop</h2>
+      <p class="lead">This is a very hands-on workshop, held on 21 &amp; 22 November 2026 at Kalika Steels, Jalna.</p>
+      <p class="lead"><strong>Participants must bring their laptops.</strong></p>
+      <p class="lead">We'll run through everything: best practices for using AI, and how to use it to 100x productivity in their own job.</p>
+    </section>
+
+    <section aria-labelledby="register-title">
+      <div class="card">
+        <div id="view-form">
+          <h2 id="register-title">Register</h2>
+          <form id="reg-form" novalidate>
+            <div class="field">
+              <label class="label" for="f-name">Full name</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" maxlength="100" required aria-describedby="e-name">
+              <p class="error" id="e-name" hidden></p>
+            </div>
+            <div class="field">
+              <label class="label" for="f-email">Email</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="254" required aria-describedby="e-email">
+              <p class="error" id="e-email" hidden></p>
+            </div>
+            <div class="field">
+              <label class="label" for="f-phone">Phone</label>
+              <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="e.g. 98765 43210" required aria-describedby="h-phone e-phone">
+              <p class="hint" id="h-phone">10-digit Indian mobile number.</p>
+              <p class="error" id="e-phone" hidden></p>
+            </div>
+            <div class="field">
+              <label class="label" for="f-company">Company</label>
+              <input id="f-company" name="company" type="text" autocomplete="organization" maxlength="150" required aria-describedby="e-company">
+              <p class="error" id="e-company" hidden></p>
+            </div>
+            <div class="field">
+              <label class="label" for="f-role">Role</label>
+              <input id="f-role" name="role" type="text" autocomplete="organization-title" maxlength="100" placeholder="e.g. Plant Manager" required aria-describedby="e-role">
+              <p class="error" id="e-role" hidden></p>
+            </div>
+            <div class="field">
+              <label class="label" for="f-expectations">What do you expect from the workshop?</label>
+              <textarea id="f-expectations" name="expectations" maxlength="1500" required aria-describedby="h-expectations e-expectations"></textarea>
+              <div class="row-between">
+                <p class="hint" id="h-expectations">What you want to be able to do after these two days.</p>
+                <p class="hint" aria-hidden="true"><span id="count">0</span>/1500</p>
+              </div>
+              <p class="error" id="e-expectations" hidden></p>
+            </div>
+            <fieldset class="field">
+              <legend class="label">Payment</legend>
+              <div class="options">
+                <label class="option">
+                  <input type="radio" name="paymentMethod" value="online" checked>
+                  <span><strong>Pay online</strong><span>UPI, cards or netbanking through Razorpay.</span></span>
+                </label>
+                <label class="option">
+                  <input type="radio" name="paymentMethod" value="cash">
+                  <span><strong>Pay in cash</strong><span>Register now and pay ₹3,499 in cash.</span></span>
+                </label>
+              </div>
+            </fieldset>
+            <button class="btn btn--primary" id="submit" type="submit">Continue to payment · ₹3,499</button>
+            <p class="form-foot" id="form-foot">All fields are required.</p>
+          </form>
+        </div>
+
+        <div id="view-processing" class="panel" hidden tabindex="-1">
+          <p class="status status--warn label"><span class="spinner" aria-hidden="true"></span><span id="processing-text">Working</span></p>
+          <p class="muted">Keep this page open.</p>
+        </div>
+
+        <div id="view-paid" class="panel" hidden tabindex="-1">
+          <p class="status status--ok label">Payment received</p>
+          <h2>You are registered</h2>
+          <p>Your registration ID:</p>
+          <output class="regid" data-regid></output>
+          <p>Keep this ID for your records. Razorpay usually emails a payment receipt to <strong data-email></strong>.</p>
+          <p>See you on 21 November at Kalika Steels, Jalna. Bring your laptop.</p>
+        </div>
+
+        <div id="view-unconfirmed" class="panel" hidden tabindex="-1">
+          <p class="status status--warn label">Payment not confirmed on this page</p>
+          <h2>We are checking your payment</h2>
+          <p>Razorpay finished the payment, but this page could not confirm it. If money left your account, it is recorded against your registration automatically. You do not need to pay again.</p>
+          <p>Your registration ID:</p>
+          <output class="regid" data-regid></output>
+          <p>If anything looks wrong, contact Krishna Jindal on <a href="tel:+919730922589">9730922589</a> and quote this ID.</p>
+        </div>
+
+        <div id="view-cash" class="panel" hidden tabindex="-1">
+          <p class="status status--warn label">Cash payment pending</p>
+          <h2>You are registered</h2>
+          <p>Your registration ID:</p>
+          <output class="regid" data-regid></output>
+          <p>Please pay ₹3,499 in cash to:</p>
+          <address class="payto">
+            <p><strong>JSC Seed Private Limited</strong></p>
+            <p>Bus Stand Road, 29, Jalna 431203</p>
+            <p>Contact: Krishna Jindal, <a href="tel:+919730922589">9730922589</a></p>
+          </address>
+          <p>Mention your registration ID when paying.</p>
+        </div>
+
+        <div id="view-dismissed" class="panel" hidden tabindex="-1">
+          <p class="status status--warn label">Payment not completed</p>
+          <h2>Your seat is not confirmed yet</h2>
+          <p>The payment window closed before a payment went through. Your details are saved under this registration ID:</p>
+          <output class="regid" data-regid></output>
+          <p>No money was taken. If your bank shows a debit, it is refunded or recorded automatically.</p>
+          <div class="actions">
+            <button class="btn btn--primary" type="button" id="retry-payment">Try payment again</button>
+            <button class="btn btn--secondary" type="button" data-back>Edit details and start over</button>
+          </div>
+        </div>
+
+        <div id="view-error" class="panel" hidden tabindex="-1">
+          <p class="status status--bad label">Something went wrong</p>
+          <h2 id="error-title">Registration not saved</h2>
+          <p id="error-text"></p>
+          <div class="actions">
+            <button class="btn btn--primary" type="button" data-back>Back to the form</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Questions: Krishna Jindal, <a href="tel:+919730922589">9730922589</a></p>
+  </div>
+</footer>
+
+<script type="module">
+import { validateRegistration } from '/lib/validate.js';
+
+const form = document.getElementById('reg-form');
+const submit = document.getElementById('submit');
+const views = ['form', 'processing', 'paid', 'unconfirmed', 'cash', 'dismissed', 'error'];
+const FIELDS = ['name', 'email', 'phone', 'company', 'role', 'expectations'];
+let busy = false;
+let pending = null; // { order, registrationId, email } for the current online attempt
+
+function show(name) {
+  for (const v of views) document.getElementById(`view-${v}`).hidden = v !== name;
+  const el = document.getElementById(`view-${name}`);
+  if (name !== 'form') el.focus();
+  el.scrollIntoView({ block: 'start', behavior: 'smooth' });
+}
+
+function processing(text) {
+  document.getElementById('processing-text').textContent = text;
+  show('processing');
+}
+
+function fillResult(registrationId, email) {
+  document.querySelectorAll('[data-regid]').forEach((el) => { el.textContent = registrationId; });
+  document.querySelectorAll('[data-email]').forEach((el) => { el.textContent = email; });
+}
+
+function fail(title, text) {
+  document.getElementById('error-title').textContent = title;
+  document.getElementById('error-text').textContent = text;
+  show('error');
+}
+
+function method() {
+  return form.querySelector('input[name="paymentMethod"]:checked').value;
+}
+
+function syncSubmitLabel() {
+  submit.textContent = method() === 'cash' ? 'Register · pay ₹3,499 in cash' : 'Continue to payment · ₹3,499';
+}
+
+function setErrors(errors) {
+  let first = null;
+  for (const f of FIELDS) {
+    const input = form.elements[f];
+    const msg = document.getElementById(`e-${f}`);
+    if (errors[f]) {
+      input.setAttribute('aria-invalid', 'true');
+      msg.textContent = errors[f];
+      msg.hidden = false;
+      first ??= input;
+    } else {
+      input.removeAttribute('aria-invalid');
+      msg.hidden = true;
+    }
+  }
+  if (first) first.focus();
+}
+
+function payload() {
+  return Object.fromEntries(FIELDS.map((f) => [f, form.elements[f].value]));
+}
+
+async function post(path, body) {
+  const res = await fetch(path, {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify(body),
+  });
+  const data = await res.json().catch(() => ({}));
+  return { status: res.status, data };
+}
+
+function openCheckout() {
+  const { order, registrationId, email } = pending;
+  if (typeof window.Razorpay !== 'function') {
+    fail('Payment window did not load',
+      `The Razorpay payment window could not load. This can happen on a slow or filtered connection. Your details are saved under registration ID ${registrationId}. Reload the page and try again, or choose to pay in cash.`);
+    return;
+  }
+  let settled = false;
+  const rzp = new window.Razorpay({
+    key: order.keyId,
+    order_id: order.orderId,
+    amount: order.amount,
+    currency: order.currency,
+    name: 'AI Training',
+    description: '21 & 22 Nov 2026 · Kalika Steels, Jalna',
+    prefill: order.prefill,
+    notes: { registration_id: registrationId },
+    theme: { color: '#204494' },
+    handler: async (response) => {
+      settled = true;
+      processing('Confirming payment');
+      try {
+        const { data } = await post('/api/verify-payment', response);
+        show(data.ok ? 'paid' : 'unconfirmed');
+      } catch {
+        show('unconfirmed');
+      }
+    },
+    modal: {
+      ondismiss: () => { if (!settled) show('dismissed'); },
+    },
+  });
+  rzp.open();
+}
+
+async function onSubmit(event) {
+  event.preventDefault();
+  if (busy) return;
+  const input = payload();
+  const check = validateRegistration(input);
+  setErrors(check.ok ? {} : check.errors);
+  if (!check.ok) return;
+
+  busy = true;
+  submit.disabled = true;
+  const cash = method() === 'cash';
+  processing(cash ? 'Saving your registration' : 'Starting payment');
+  try {
+    const { status, data } = await post(cash ? '/api/register-cash' : '/api/create-order', input);
+    if (status === 400 && data.errors) {
+      show('form');
+      setErrors(data.errors);
+      return;
+    }
+    if (!data.ok) {
+      fail(cash ? 'Registration not saved' : 'Payment not started',
+        data.message || 'The server did not accept the request. Nothing was charged. Please try again.');
+      return;
+    }
+    fillResult(data.registrationId, check.data.email);
+    if (cash) {
+      show('cash');
+    } else {
+      pending = { order: data, registrationId: data.registrationId, email: check.data.email };
+      openCheckout();
+    }
+  } catch {
+    fail('Could not reach the server',
+      'Your connection dropped before the registration was saved. Nothing was charged. Check your connection and try again.');
+  } finally {
+    busy = false;
+    submit.disabled = false;
+  }
+}
+
+form.addEventListener('submit', onSubmit);
+form.addEventListener('change', (e) => { if (e.target.name === 'paymentMethod') syncSubmitLabel(); });
+form.elements.expectations.addEventListener('input', (e) => {
+  document.getElementById('count').textContent = e.target.value.length;
+});
+document.getElementById('retry-payment').addEventListener('click', openCheckout);
+document.querySelectorAll('[data-back]').forEach((b) => b.addEventListener('click', () => {
+  pending = null;
+  show('form');
+}));
+syncSubmitLabel();
+</script>
+</body>
+</html>
