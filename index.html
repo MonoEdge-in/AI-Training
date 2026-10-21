@@ -3,618 +3,528 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>AI Training for Company Owners · Register</title>
-<meta name="description" content="A two-day, hands-on AI workshop for company owners. Saturday 21 and Sunday 22 November 2026 at Kalika Steels, Jalna. ₹3,499 inclusive of all taxes.">
+<title>AI Training for Company Owners · Jalna · 21–22 Nov 2026</title>
+<meta name="description" content="A two-day, hands-on AI workshop for company owners, led by Mihirr Sose. Saturday 21 and Sunday 22 November 2026 at Kalika Steels, Jalna. ₹3,499 inclusive of all taxes.">
 <meta property="og:title" content="AI Training for Company Owners · Sat 21 & Sun 22 Nov 2026">
-<meta property="og:description" content="Two days, hands-on, at Kalika Steels, Jalna. Led by Mihirr Sose. ₹3,499 inclusive of all taxes.">
+<meta property="og:description" content="Two hands-on days at Kalika Steels, Jalna. Led by Mihirr Sose. ₹3,499 inclusive of all taxes.">
 <meta property="og:image" content="/assets/trainer-mihirr-sose.jpg">
 <meta name="theme-color" content="#204494">
+<meta name="color-scheme" content="light">
 <link rel="icon" type="image/png" href="/assets/monoedge-symbol-dark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <script src="https://checkout.razorpay.com/v1/checkout.js" async></script>
 <style>
-/* Tokens from the MonoEdge Systems design system (tokens.json). */
+/* Brand colours from the MonoEdge design system; layout and type tuned for a sign-up page. */
 :root {
-  color-scheme: light;
-  --monoedge-blue: #204494;
-  --ice-blue: #85a9dd;
-  --surface: #ffffff;
-  --surface-muted: #ececec;
-  --surface-raised: #f6f6f6;
-  --surface-brand: var(--monoedge-blue);
-  --surface-accent: var(--ice-blue);
-  --ink: #000000;
-  --ink-muted: #4a4a4a;
-  --ink-accent: var(--monoedge-blue);
-  --ink-on-brand: #ffffff;
-  --ink-on-accent: #000000;
-  --border: #d4d4d4;
-  --border-strong: #6b6b6b;
-  --focus: var(--monoedge-blue);
+  --blue: #204494;
+  --blue-dark: #183473;
+  --ice: #85a9dd;
+  --ice-soft: #e9f0fa;
+  --ink: #0f1115;
+  --ink-2: #353a45;
+  --muted: #5b6170;
+  --line: #e3e6eb;
+  --line-strong: #9aa1ad;
+  --bg: #f5f6f8;
+  --card: #ffffff;
   --success: #1a6b3f;
+  --success-soft: #e8f3ec;
   --warning: #8a5500;
-  --danger: #a3232b;
-
-  --font-display: "Monument Extended", "Helvetica Neue", Arial, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-
-  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
-  --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 64px;
-  --radius-sm: 2px; --radius-md: 4px; --radius-lg: 8px;
+  --warning-soft: #fbf1e1;
+  --danger: #b42318;
+  --danger-soft: #fdecea;
+  --shadow-card: 0 1px 2px rgba(16, 24, 40, 0.06), 0 16px 40px rgba(16, 24, 40, 0.12);
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    color-scheme: dark;
-    --surface: #000000;
-    --surface-muted: #121212;
-    --surface-raised: #1c1c1c;
-    --ink: #ffffff;
-    --ink-muted: #b5b5b5;
-    --ink-accent: var(--ice-blue);
-    --border: #2a2a2a;
-    --border-strong: #8f8f8f;
-    --focus: var(--ice-blue);
-    --success: #5cc08a;
-    --warning: #e0a23c;
-    --danger: #f08a8a;
-  }
-}
-:root[data-theme="dark"] {
-  color-scheme: dark;
-  --surface: #000000;
-  --surface-muted: #121212;
-  --surface-raised: #1c1c1c;
-  --ink: #ffffff;
-  --ink-muted: #b5b5b5;
-  --ink-accent: var(--ice-blue);
-  --border: #2a2a2a;
-  --border-strong: #8f8f8f;
-  --focus: var(--ice-blue);
-  --success: #5cc08a;
-  --warning: #e0a23c;
-  --danger: #f08a8a;
-}
-
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 16px; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-body {
-  margin: 0;
-  background: var(--surface);
-  color: var(--ink);
-  font-family: var(--font-mono);
-  font-size: 15px;
-  line-height: 26px;
-  -webkit-font-smoothing: antialiased;
-}
-:where(a, button, input, textarea, [tabindex]):focus-visible {
-  outline: 2px solid var(--focus);
-  outline-offset: 2px;
-}
-a { color: var(--ink-accent); }
-img { max-width: 100%; }
-.wrap { max-width: 960px; margin: 0 auto; padding: 0 var(--space-4); }
-@media (min-width: 720px) { .wrap { padding: 0 var(--space-6); } }
-.label {
-  font-size: 12px; line-height: 16px; font-weight: 500;
-  letter-spacing: 0.12em; text-transform: uppercase;
-}
-.muted { color: var(--ink-muted); }
-.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; display: block; }
+a { color: var(--blue); }
+:where(a, button, input, textarea, summary):focus-visible { outline: 3px solid var(--ice); outline-offset: 2px; border-radius: 6px; }
 [hidden] { display: none !important; }
+.page { overflow-x: clip; }
+.container { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+.eyebrow { font-family: var(--mono); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 12px; color: var(--blue); }
 
-/* ---------- Top strip: company, website, contact ---------- */
-.topbar { border-bottom: 1px solid var(--border); background: var(--surface); }
-.topbar__inner {
-  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
-  gap: var(--space-2) var(--space-4); padding-block: var(--space-3);
+/* ---------- Header ---------- */
+.header { background: #fff; border-bottom: 1px solid var(--line); }
+.header__row { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 60px; }
+.header__logo img { height: 20px; width: auto; }
+.header__right { display: flex; align-items: center; gap: 20px; font-size: 14px; }
+.header__site { color: var(--ink-2); text-decoration: none; font-weight: 500; }
+.header__site:hover { color: var(--blue); }
+.header__call { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: var(--ink); font-weight: 600; }
+.header__call svg { width: 18px; height: 18px; color: var(--blue); flex: none; }
+.header__call small { display: block; font-size: 12px; font-weight: 500; color: var(--muted); line-height: 1.2; }
+.header__call span { line-height: 1.25; }
+@media (max-width: 560px) { .header__site { display: none; } }
+.header__tagline { border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); padding: 8px 0; margin: 0; }
+.header__tagline a { color: var(--muted); }
+
+/* ---------- Layout: content left, booking card right ---------- */
+.layout { display: grid; grid-template-columns: minmax(0, 1fr); position: relative; z-index: 0; }
+@media (min-width: 980px) {
+  .layout { grid-template-columns: minmax(0, 1fr) 400px; column-gap: 56px; }
+  .layout > * { grid-column: 1; }
+  .layout > .booking { grid-column: 2; grid-row: 1 / span 20; align-self: start; position: sticky; top: 24px; z-index: 2; }
 }
-.brand { display: flex; align-items: center; gap: var(--space-3); min-width: 0; }
-.brand img { height: 18px; width: auto; display: block; flex: none; }
-.brand__logo--light { display: none !important; }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .brand__logo--dark { display: none !important; }
-  :root:not([data-theme="light"]) .brand__logo--light { display: block !important; }
-}
-.site-link { font-size: 13px; line-height: 20px; font-weight: 500; text-decoration: none; }
-.site-link:hover { text-decoration: underline; }
-.tagline { flex-basis: 100%; margin: 0; font-size: 13px; line-height: 20px; color: var(--ink-muted); }
-.contact-strip { background: var(--surface-muted); }
-.contact-strip p {
-  margin: 0; padding: var(--space-2) 0; font-size: 13px; line-height: 20px;
-  display: flex; flex-wrap: wrap; gap: 0 var(--space-2);
-}
-.contact-strip a { font-weight: 700; }
 
 /* ---------- Hero ---------- */
-.hero { background: var(--surface-brand); color: var(--ink-on-brand); }
-.hero__inner { padding-block: var(--space-7); }
-.hero .label { color: var(--ink-on-brand); }
-.eyebrow-row { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: 0 0 var(--space-5); padding: 0; list-style: none; }
-.tag {
-  display: inline-flex; align-items: center; height: 26px; padding: 0 var(--space-2);
-  border: 1px solid rgba(255, 255, 255, 0.55); border-radius: var(--radius-sm);
-}
-.hero h1 {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: clamp(40px, 11vw, 68px);
-  line-height: 0.98;
-  white-space: nowrap;
-  letter-spacing: -0.015em;
-  text-transform: uppercase;
-  margin: 0 0 var(--space-5);
-}
-.hero h1 { margin-bottom: var(--space-2); }
-.hero__kicker { font-family: var(--font-display); text-transform: uppercase; color: var(--ice-blue); font-size: clamp(22px, 6vw, 40px); line-height: 1.1; margin: 0 0 var(--space-5); }
-.hero__lead { font-size: 17px; line-height: 28px; margin: 0 0 var(--space-6); max-width: 34em; }
-.hero__grid { display: grid; gap: var(--space-6); }
-@media (min-width: 860px) { .hero__grid { grid-template-columns: 1.35fr 1fr; align-items: end; } }
+.hero { position: relative; color: #fff; padding: 48px 0 56px; }
+.hero::before { content: ""; position: absolute; inset: 0 -100vw; background: var(--blue); z-index: -1; }
+.hero .eyebrow { color: var(--ice); }
+.hero h1 { font-size: clamp(34px, 7.4vw, 56px); line-height: 1.06; letter-spacing: -0.025em; font-weight: 800; margin: 0 0 18px; }
+.hero h1 em { font-style: normal; color: var(--ice); }
+.hero__sub { font-size: 18px; line-height: 1.55; color: #dbe5f6; margin: 0 0 28px; max-width: 34em; }
+.hero__sub strong { color: #fff; font-weight: 600; }
+.meta { list-style: none; margin: 0 0 28px; padding: 0; display: grid; gap: 14px; }
+@media (min-width: 640px) { .meta { grid-template-columns: repeat(3, auto); justify-content: start; column-gap: 28px; } }
+.meta li { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; line-height: 1.4; }
+.meta svg { width: 20px; height: 20px; color: var(--ice); flex: none; margin-top: 1px; }
+.meta strong { display: block; font-weight: 600; }
+.meta span { color: #c7d5ee; font-size: 14px; }
+.hero__cta { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 24px; }
+@media (min-width: 980px) { .hero__cta .btn { display: none; } }
+.led-by { display: flex; align-items: center; gap: 12px; color: #dbe5f6; font-size: 14px; line-height: 1.35; }
+.led-by img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255, 255, 255, 0.6); }
+.led-by strong { color: #fff; display: block; font-weight: 600; font-size: 15px; }
 
-.facts {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
-  margin: 0 0 var(--space-5); background: rgba(255, 255, 255, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-}
-.facts > div { background: var(--surface-brand); padding: var(--space-3) var(--space-4); }
-.facts .wide { grid-column: 1 / -1; }
-.facts dt { margin: 0 0 var(--space-1); opacity: 0.85; }
-.facts dd { margin: 0; font-size: 15px; line-height: 22px; font-weight: 700; }
-.facts dd small { display: block; font-size: 12px; line-height: 18px; font-weight: 400; opacity: 0.85; }
-
-.btn {
-  display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
-  min-height: 52px; padding: var(--space-2) var(--space-5);
-  border-radius: var(--radius-md); border: 1px solid transparent;
-  font-family: var(--font-mono); font-size: 15px; font-weight: 700;
-  cursor: pointer; text-decoration: none;
-}
-.btn--on-brand { background: #ffffff; color: var(--monoedge-blue); width: 100%; }
-@media (min-width: 560px) { .btn--on-brand { width: auto; } }
-.btn--primary { background: var(--surface-brand); color: var(--ink-on-brand); width: 100%; }
-.btn--secondary { background: transparent; color: var(--ink); border-color: var(--border-strong); width: 100%; }
-.btn[disabled] { opacity: 0.6; cursor: progress; }
+/* ---------- Buttons ---------- */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 24px; border-radius: 10px; border: 0; font-family: var(--sans); font-size: 16px; font-weight: 700; text-decoration: none; cursor: pointer; transition: background-color 120ms ease, transform 120ms ease; }
+.btn:active { transform: translateY(1px); }
 .btn svg { width: 18px; height: 18px; flex: none; }
-.hero__note { margin: var(--space-3) 0 0; font-size: 13px; line-height: 20px; opacity: 0.85; }
+.btn--light { background: #fff; color: var(--blue); }
+.btn--light:hover { background: var(--ice-soft); }
+.btn--primary { background: var(--blue); color: #fff; width: 100%; }
+.btn--primary:hover { background: var(--blue-dark); }
+.btn--ghost { background: transparent; color: var(--ink-2); width: 100%; border: 1px solid var(--line-strong); }
+.btn[disabled] { opacity: 0.6; cursor: progress; }
+.link-btn { background: none; border: 0; padding: 8px 0; font: inherit; font-size: 15px; font-weight: 600; color: var(--ink-2); cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+.link-btn svg { width: 16px; height: 16px; }
 
-.trainer-chip {
-  display: flex; gap: var(--space-4); align-items: center;
-  padding: var(--space-4); border: 1px solid rgba(255, 255, 255, 0.35);
-  border-radius: var(--radius-lg);
-}
-.trainer-chip img { width: 72px; height: 72px; object-fit: cover; border-radius: var(--radius-md); flex: none; }
-.trainer-chip p { margin: 0; }
-.trainer-chip .name { font-size: 17px; line-height: 24px; font-weight: 700; }
-.trainer-chip .role { font-size: 13px; line-height: 20px; opacity: 0.85; }
-.trainer-chip a { color: var(--ink-on-brand); font-size: 13px; line-height: 20px; font-weight: 500; }
+/* ---------- Proof strip ---------- */
+.proof { padding: 32px 0 0; }
+.proof p { margin: 0 0 12px; font-size: 14px; color: var(--muted); }
+.proof ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.proof li { background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 7px 14px; font-size: 14px; line-height: 1.3; }
+.proof li strong { font-weight: 700; }
+.proof li span { color: var(--muted); }
 
-/* ---------- Sections ---------- */
-section.block { padding: var(--space-7) 0; }
-section.block + section.block { border-top: 1px solid var(--border); }
-.section-label { color: var(--ink-muted); margin: 0 0 var(--space-3); }
-h2 {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: clamp(24px, 6vw, 36px); line-height: 1.12;
-  text-transform: uppercase;
-  margin: 0 0 var(--space-5);
-  display: flex; align-items: baseline; gap: var(--space-4);
-}
-h2::before {
-  content: ""; flex: none; align-self: center;
-  width: 0.45em; height: 1.1em; background: var(--ink-accent);
-}
-.intro { font-size: 17px; line-height: 28px; margin: 0 0 var(--space-6); max-width: 40em; }
+/* ---------- Content sections ---------- */
+.section { padding: 56px 0 0; }
+.section h2 { font-size: clamp(26px, 5vw, 36px); line-height: 1.15; letter-spacing: -0.02em; font-weight: 800; margin: 0 0 20px; }
 
-/* Statement band */
-.statement { background: var(--surface-muted); }
-.statement blockquote {
-  margin: 0; padding: var(--space-7) 0;
-  font-family: var(--font-display); font-weight: 400; text-transform: uppercase;
-  font-size: clamp(24px, 6.4vw, 44px); line-height: 1.1;
-}
-.statement blockquote span { color: var(--ink-accent); }
-.statement cite { display: block; margin-top: var(--space-4); font-family: var(--font-mono); font-style: normal; text-transform: none; font-size: 15px; line-height: 24px; color: var(--ink-muted); }
+.noise { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 26px 24px; display: grid; gap: 10px; }
+.noise p { margin: 0; font-size: 17px; line-height: 1.65; color: var(--ink-2); }
+.noise p:first-child { font-size: 22px; line-height: 1.3; font-weight: 700; color: var(--ink); letter-spacing: -0.01em; }
 
-/* Takeaways */
-.takeaways { list-style: none; margin: 0; padding: 0; display: grid; gap: 1px; background: var(--border); border: 1px solid var(--border); }
-@media (min-width: 720px) { .takeaways { grid-template-columns: 1fr 1fr; } .takeaways li:last-child:nth-child(odd) { grid-column: 1 / -1; } }
-.takeaways li { background: var(--surface); padding: var(--space-5) var(--space-4); display: grid; grid-template-columns: auto 1fr; gap: var(--space-4); }
-@media (min-width: 720px) { .takeaways li { padding: var(--space-5); } }
-.takeaways .n { font-family: var(--font-display); font-size: 28px; line-height: 30px; color: var(--ink-accent); }
-.takeaways h3 { margin: 0 0 var(--space-2); font-size: 16px; line-height: 24px; font-weight: 700; }
-.takeaways p { margin: 0; color: var(--ink-muted); font-size: 14px; line-height: 23px; }
-
-/* Format */
-.format { display: grid; grid-template-columns: 1fr; gap: var(--space-3); margin-top: var(--space-6); }
-@media (min-width: 480px) { .format { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-.format > div { border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-4) var(--space-3); background: var(--surface-raised); }
-.format .big { display: block; font-family: var(--font-display); font-size: clamp(20px, 5.4vw, 30px); line-height: 1.1; text-transform: uppercase; color: var(--ink-accent); margin-bottom: var(--space-2); }
-.format p { margin: 0; font-size: 13px; line-height: 20px; color: var(--ink-muted); }
+.learn { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+@media (min-width: 640px) { .learn { grid-template-columns: 1fr 1fr; } }
+.learn li { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 22px 20px; }
+.learn .icon { width: 40px; height: 40px; border-radius: 10px; background: var(--ice-soft); color: var(--blue); display: grid; place-items: center; margin-bottom: 14px; }
+.learn .icon svg { width: 22px; height: 22px; }
+.learn h3 { margin: 0 0 6px; font-size: 17px; line-height: 1.35; font-weight: 700; }
+.learn p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--muted); }
+.learn li.learn--wide { background: var(--blue); border-color: var(--blue); color: #fff; }
+@media (min-width: 640px) { .learn li.learn--wide { grid-column: 1 / -1; } }
+.learn--wide .icon { background: rgba(255, 255, 255, 0.14); color: #fff; }
+.learn li.learn--wide p { color: #dbe5f6; }
 
 /* Trainer */
-.trainer { display: grid; gap: var(--space-5); }
-@media (min-width: 720px) { .trainer { grid-template-columns: 220px 1fr; gap: var(--space-6); } .trainer__photo { max-width: 220px; } }
-.trainer__photo { width: 100%; max-width: 168px; aspect-ratio: 336 / 370; object-fit: cover; border-radius: var(--radius-lg); display: block; }
-.trainer__name { font-family: var(--font-display); font-size: 22px; line-height: 28px; text-transform: uppercase; margin: 0 0 var(--space-1); }
-.trainer__role { margin: 0 0 var(--space-4); color: var(--ink-muted); }
-.trainer__bio { margin: 0 0 var(--space-4); }
-.linkedin {
-  display: inline-flex; align-items: center; gap: var(--space-2); min-height: 44px;
-  padding: 0 var(--space-4); border: 1px solid var(--border-strong); border-radius: var(--radius-md);
-  color: var(--ink); text-decoration: none; font-weight: 500; font-size: 14px;
-}
-.linkedin svg { width: 18px; height: 18px; color: var(--ink-accent); }
-.path { list-style: none; margin: var(--space-6) 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-2); }
-.path li { font-size: 13px; line-height: 20px; padding: var(--space-1) var(--space-3); border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--surface-raised); }
-.path li + li::before { content: "→ "; color: var(--ink-accent); }
-.impact { display: grid; gap: var(--space-3); margin-top: var(--space-6); }
-@media (min-width: 560px) { .impact { grid-template-columns: 1fr 1fr; } }
-@media (min-width: 860px) { .impact { grid-template-columns: repeat(3, 1fr); } }
-.stat { border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-4); }
-.stat .num { display: block; font-size: 30px; line-height: 36px; font-weight: 700; color: var(--ink-accent); letter-spacing: -0.01em; }
-.stat .what { display: block; font-weight: 700; font-size: 14px; line-height: 22px; margin: var(--space-1) 0; }
-.stat p { margin: 0; font-size: 13px; line-height: 20px; color: var(--ink-muted); }
-.source-note { margin: var(--space-3) 0 0; font-size: 12px; line-height: 18px; color: var(--ink-muted); }
+.trainer { background: #fff; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+.trainer__top { display: grid; gap: 20px; padding: 24px; }
+@media (min-width: 640px) { .trainer__top { grid-template-columns: 180px 1fr; gap: 28px; padding: 28px; } }
+.trainer__photo { width: 100%; max-width: 180px; aspect-ratio: 336 / 370; object-fit: cover; border-radius: 12px; }
+.trainer h3 { margin: 0; font-size: 24px; line-height: 1.2; font-weight: 800; letter-spacing: -0.01em; }
+.trainer__role { margin: 4px 0 14px; color: var(--muted); font-size: 15px; }
+.trainer__bio { margin: 0 0 18px; color: var(--ink-2); font-size: 16px; line-height: 1.65; }
+.linkedin { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border-radius: 10px; border: 1px solid var(--line-strong); color: var(--ink); text-decoration: none; font-weight: 600; font-size: 15px; }
+.linkedin:hover { border-color: var(--blue); color: var(--blue); }
+.linkedin svg { width: 18px; height: 18px; color: #0a66c2; }
+.stats { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); }
+@media (min-width: 640px) { .stats { grid-template-columns: repeat(4, 1fr); } }
+.stat { padding: 20px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.stat:nth-child(2n) { border-right: 0; }
+.stat:nth-last-child(-n+2) { border-bottom: 0; }
+@media (min-width: 640px) { .stat { border-bottom: 0; } .stat:nth-child(2n) { border-right: 1px solid var(--line); } .stat:last-child { border-right: 0; } }
+.stat b { display: block; font-size: 30px; line-height: 1.1; font-weight: 800; color: var(--blue); letter-spacing: -0.02em; }
+.stat span { display: block; font-size: 14px; line-height: 1.4; color: var(--muted); margin-top: 6px; }
+.trainer__more { margin: 0; padding: 16px 24px; background: var(--bg); border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
 
-/* ---------- Register ---------- */
-.register { background: var(--surface-muted); }
-.register__grid { display: grid; gap: var(--space-6); }
-@media (min-width: 860px) { .register__grid { grid-template-columns: 1fr 1.5fr; align-items: start; } .register__aside { position: sticky; top: var(--space-5); } }
-.price { font-size: 40px; line-height: 44px; font-weight: 700; margin: 0; }
-.price small { display: block; font-size: 13px; line-height: 20px; font-weight: 400; color: var(--ink-muted); }
-.checklist { list-style: none; margin: var(--space-5) 0 0; padding: 0; display: grid; gap: var(--space-3); }
-.checklist li { display: grid; grid-template-columns: 20px 1fr; gap: var(--space-3); font-size: 14px; line-height: 22px; }
-.checklist svg { width: 20px; height: 20px; color: var(--success); margin-top: 1px; }
-.help-box { margin-top: var(--space-5); padding: var(--space-4); border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--surface); font-size: 14px; line-height: 22px; }
-.help-box p { margin: 0; }
-.help-box a { font-weight: 700; }
+/* Details + FAQ */
+.details { margin: 0; background: #fff; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+.details div { display: grid; grid-template-columns: 96px 1fr; gap: 12px; padding: 16px 20px; border-bottom: 1px solid var(--line); }
+.details div:last-child { border-bottom: 0; }
+.details dt { font-size: 14px; color: var(--muted); }
+.details dd { margin: 0; font-size: 15px; font-weight: 600; }
+.details dd span { display: block; font-weight: 400; color: var(--muted); font-size: 14px; }
+.faq { display: grid; gap: 10px; }
+.faq details { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 0 20px; }
+.faq summary { list-style: none; cursor: pointer; padding: 18px 0; font-weight: 600; font-size: 16px; display: flex; justify-content: space-between; gap: 16px; align-items: center; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font-size: 22px; font-weight: 400; color: var(--blue); line-height: 1; }
+.faq details[open] summary::after { content: "–"; }
+.faq details p { margin: 0 0 18px; color: var(--ink-2); font-size: 15px; line-height: 1.6; }
 
-.card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-5) var(--space-4);
-}
-@media (min-width: 560px) { .card { padding: var(--space-6); } }
-.card h2 { font-size: 24px; margin-bottom: var(--space-2); }
-.card__sub { margin: 0 0 var(--space-5); color: var(--ink-muted); font-size: 14px; line-height: 22px; }
+.final { margin: 56px 0 0; padding: 40px 24px; border-radius: 16px; background: var(--blue); color: #fff; text-align: center; }
+.final h2 { margin: 0 0 8px; font-size: clamp(24px, 5vw, 32px); letter-spacing: -0.02em; font-weight: 800; color: #fff; }
+.final p { margin: 0 0 22px; color: #dbe5f6; }
+@media (min-width: 980px) { .final { display: none; } }
 
-.field { margin-bottom: var(--space-5); }
-.field > label, .field > legend, .field-head label { display: block; margin: 0 0 var(--space-2); padding: 0; }
-.two { display: grid; gap: 0 var(--space-4); }
-@media (min-width: 560px) { .two { grid-template-columns: 1fr 1fr; } }
+/* ---------- Booking card + form ---------- */
+.booking { padding: 40px 0 0; }
+@media (min-width: 980px) { .booking { padding-top: 40px; } }
+.card { background: var(--card); border-radius: 18px; box-shadow: var(--shadow-card); border: 1px solid var(--line); overflow: hidden; }
+.card__head { padding: 22px 24px 18px; border-bottom: 1px solid var(--line); }
+.card__title { margin: 0 0 10px; font-size: 20px; line-height: 1.25; font-weight: 800; letter-spacing: -0.01em; }
+.price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 10px; margin: 0; }
+.price b { font-size: 32px; line-height: 1; font-weight: 800; letter-spacing: -0.02em; }
+.price span { color: var(--muted); font-size: 14px; }
+.card__facts { margin: 12px 0 0; padding: 0; list-style: none; display: grid; gap: 6px; font-size: 14px; color: var(--ink-2); }
+.card__facts li { display: flex; gap: 8px; align-items: center; }
+.card__facts svg { width: 16px; height: 16px; color: var(--blue); flex: none; }
+.card__body { padding: 22px 24px 24px; }
+
+.progress { margin: 0 0 20px; }
+.progress__row { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+.progress__row strong { color: var(--ink); font-weight: 600; }
+.progress__bar { height: 6px; border-radius: 999px; background: var(--line); overflow: hidden; }
+.progress__bar i { display: block; height: 100%; width: 50%; background: var(--blue); border-radius: 999px; transition: width 200ms ease; }
+
+.field { margin-bottom: 18px; }
+/* Direct labels only: option cards are labels too and must keep their own layout. */
+.field > label, .field > legend, .label-row > label { display: block; font-size: 14px; font-weight: 600; color: var(--ink); margin: 0 0 6px; padding: 0; }
 input[type="text"], input[type="email"], input[type="tel"], textarea {
-  width: 100%;
-  background: var(--surface);
-  color: var(--ink);
-  border: 1px solid var(--border-strong);
-  border-radius: var(--radius-md);
-  font-family: var(--font-mono);
-  font-size: 16px; /* 16px stops iOS zooming into the field */
-  line-height: 24px;
-  padding: var(--space-3);
-  min-height: 48px;
+  width: 100%; font-family: var(--sans); font-size: 16px; line-height: 1.5; color: var(--ink);
+  background: #fff; border: 1px solid var(--line-strong); border-radius: 10px;
+  padding: 13px 14px; min-height: 52px; transition: border-color 120ms ease, box-shadow 120ms ease;
 }
-textarea { min-height: 148px; resize: vertical; }
-input:focus, textarea:focus { border-color: var(--focus); }
+input::placeholder, textarea::placeholder { color: #8a909c; }
+input:focus, textarea:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 4px rgba(32, 68, 148, 0.15); }
+textarea { min-height: 120px; resize: vertical; }
 [aria-invalid="true"] { border-color: var(--danger) !important; }
-.hint, .error { font-size: 13px; line-height: 20px; margin: var(--space-1) 0 0; }
-.hint { color: var(--ink-muted); }
-.error { color: var(--danger); }
-.row-between { display: flex; justify-content: space-between; gap: var(--space-3); }
+[aria-invalid="true"]:focus { box-shadow: 0 0 0 4px rgba(180, 35, 24, 0.12) !important; }
+.hint { margin: 6px 0 0; font-size: 13px; line-height: 1.45; color: var(--muted); }
+.error { margin: 6px 0 0; font-size: 13px; line-height: 1.45; color: var(--danger); font-weight: 500; }
+.row-between { display: flex; justify-content: space-between; gap: 12px; }
 
-.field-head { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--space-3); margin-bottom: var(--space-2); }
-.field-head label { margin: 0; }
-.mic {
-  display: inline-flex; align-items: center; gap: var(--space-2); flex: none;
-  min-height: 40px; padding: 0 var(--space-3);
-  border: 1px solid var(--ink-accent); border-radius: var(--radius-md);
-  background: var(--surface); color: var(--ink-accent);
-  font-family: var(--font-mono); font-size: 14px; font-weight: 700; cursor: pointer;
-}
-.mic svg { width: 18px; height: 18px; }
-.mic[aria-pressed="true"] { background: var(--danger); border-color: var(--danger); color: #ffffff; }
+.label-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 6px; }
+.field .label-row > label { margin: 0; }
+.mic { display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--blue); background: #fff; color: var(--blue); font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; flex: none; }
+.mic svg { width: 16px; height: 16px; }
+.mic[aria-pressed="true"] { background: var(--danger); border-color: var(--danger); color: #fff; }
+.mic__dot { display: none; width: 8px; height: 8px; border-radius: 50%; background: currentColor; animation: pulse 1.2s ease-in-out infinite; }
 .mic[aria-pressed="true"] .mic__dot { display: inline-block; }
-.mic__dot { display: none; width: 8px; height: 8px; border-radius: 9999px; background: currentColor; animation: pulse 1.2s ease-in-out infinite; }
-@keyframes pulse { 50% { opacity: 0.25; } }
+.mic[aria-pressed="true"] svg { display: none; }
+@keyframes pulse { 50% { opacity: 0.3; } }
 @media (prefers-reduced-motion: reduce) { .mic__dot { animation: none; } }
-.mic-status { font-size: 13px; line-height: 20px; margin: var(--space-1) 0 0; color: var(--ink-accent); font-weight: 500; }
+.mic-status { margin: 6px 0 0; font-size: 13px; color: var(--blue); font-weight: 600; }
 
 fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
-.options { display: grid; gap: var(--space-3); }
-@media (min-width: 480px) { .options { grid-template-columns: 1fr 1fr; } }
-.option {
-  display: flex; gap: var(--space-3); align-items: flex-start;
-  padding: var(--space-3) var(--space-4);
-  border: 1px solid var(--border-strong);
-  border-radius: var(--radius-md);
-  background: var(--surface);
-  cursor: pointer;
-}
-.option:has(input:checked) { border-color: var(--ink-accent); outline: 1px solid var(--ink-accent); outline-offset: -2px; }
-.option input { margin: 5px 0 0; accent-color: var(--monoedge-blue); width: 16px; height: 16px; flex: none; }
-.option strong { display: block; font-weight: 700; }
-.option span { display: block; font-size: 13px; line-height: 20px; color: var(--ink-muted); }
-.form-foot { margin: var(--space-3) 0 0; font-size: 13px; line-height: 20px; color: var(--ink-muted); text-align: center; }
+.options { display: grid; gap: 10px; }
+.option { display: flex; gap: 12px; align-items: flex-start; padding: 14px; border: 1px solid var(--line-strong); border-radius: 12px; cursor: pointer; background: #fff; transition: border-color 120ms ease, background-color 120ms ease; }
+.option:has(input:checked) { border-color: var(--blue); background: var(--ice-soft); box-shadow: inset 0 0 0 1px var(--blue); }
+.option input { margin: 3px 0 0; width: 18px; height: 18px; accent-color: var(--blue); flex: none; }
+.option strong { display: block; font-size: 15px; font-weight: 600; }
+.option > span { color: var(--ink); }
+.option span span { display: block; font-size: 13px; color: var(--muted); line-height: 1.45; }
+
+.assure { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 6px; font-size: 13px; color: var(--muted); }
+.assure li { display: flex; gap: 8px; align-items: center; }
+.assure svg { width: 15px; height: 15px; color: var(--success); flex: none; }
+.step-actions { display: grid; gap: 4px; justify-items: start; }
+.step-actions .btn { justify-self: stretch; }
+.card__foot { padding: 14px 24px; background: var(--bg); border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); }
+.card__foot a { font-weight: 600; }
 
 /* Result panels */
-.panel h2 { margin-bottom: var(--space-3); }
-.panel p { margin: 0 0 var(--space-4); }
-.regid {
-  display: block;
-  margin: var(--space-2) 0 var(--space-5);
-  padding: var(--space-3) var(--space-4);
-  background: var(--surface-raised);
-  border: 1px solid var(--border-strong);
-  border-radius: var(--radius-md);
-  font-size: 22px; line-height: 28px; font-weight: 700; letter-spacing: 0.06em;
-}
-.status { display: inline-flex; align-items: center; gap: var(--space-2); margin: 0 0 var(--space-3); }
-.status::before { content: ""; width: 8px; height: 8px; border-radius: 9999px; background: currentColor; }
-.status--ok { color: var(--success); }
-.status--warn { color: var(--warning); }
-.status--bad { color: var(--danger); }
-.payto {
-  margin: 0 0 var(--space-5); padding: var(--space-4);
-  background: var(--surface-raised); border: 1px solid var(--border); border-radius: var(--radius-md);
-  font-style: normal;
-}
+.badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 600; margin: 0 0 14px; }
+.badge::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+.badge--ok { background: var(--success-soft); color: var(--success); }
+.badge--warn { background: var(--warning-soft); color: var(--warning); }
+.badge--bad { background: var(--danger-soft); color: var(--danger); }
+.panel h2 { margin: 0 0 10px; font-size: 24px; line-height: 1.2; font-weight: 800; letter-spacing: -0.01em; }
+.panel p { margin: 0 0 14px; font-size: 15px; color: var(--ink-2); }
+.regid { display: block; margin: 4px 0 18px; padding: 14px 16px; border-radius: 12px; background: var(--ice-soft); font-family: var(--mono); font-size: 24px; font-weight: 500; letter-spacing: 0.06em; color: var(--blue); text-align: center; }
+.payto { margin: 0 0 16px; padding: 16px; border-radius: 12px; border: 1px solid var(--line); font-style: normal; font-size: 15px; line-height: 1.55; }
 .payto p { margin: 0; }
-.actions { display: grid; gap: var(--space-3); }
-.spinner {
-  width: 16px; height: 16px; border-radius: 9999px; flex: none;
-  border: 2px solid currentColor; border-right-color: transparent;
-  animation: spin 0.8s linear infinite;
-}
+.actions { display: grid; gap: 10px; }
+.processing { display: flex; align-items: center; gap: 12px; font-weight: 600; padding: 24px 0 8px; }
+.spinner { width: 22px; height: 22px; border-radius: 50%; border: 3px solid var(--ice-soft); border-top-color: var(--blue); animation: spin 0.8s linear infinite; flex: none; }
 @keyframes spin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .spinner { animation-duration: 2.4s; } }
 
-/* Sticky register bar on phones */
-.sticky-cta {
-  position: fixed; left: 0; right: 0; bottom: 0; z-index: 10;
-  background: var(--surface); border-top: 1px solid var(--border);
-  padding: var(--space-3) var(--space-4) calc(var(--space-3) + env(safe-area-inset-bottom));
-  display: flex; align-items: center; justify-content: space-between; gap: var(--space-3);
-  transition: transform 160ms ease;
-}
-.sticky-cta.is-hidden { transform: translateY(110%); }
-.sticky-cta p { margin: 0; font-size: 13px; line-height: 18px; }
-.sticky-cta strong { display: block; font-size: 16px; line-height: 22px; }
-.sticky-cta .btn { min-height: 44px; padding: 0 var(--space-4); width: auto; }
-@media (min-width: 860px) { .sticky-cta { display: none; } }
+/* Sticky mobile bar */
+.sticky-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 20px calc(12px + env(safe-area-inset-bottom)); background: #fff; border-top: 1px solid var(--line); box-shadow: 0 -8px 24px rgba(16, 24, 40, 0.08); transition: transform 180ms ease; }
+.sticky-cta.is-hidden { transform: translateY(120%); }
+.sticky-cta p { margin: 0; font-size: 13px; line-height: 1.3; color: var(--muted); }
+.sticky-cta b { display: block; font-size: 18px; color: var(--ink); }
+.sticky-cta .btn { width: auto; min-height: 46px; padding: 0 22px; }
+@media (min-width: 980px) { .sticky-cta { display: none; } }
 
-footer { border-top: 1px solid var(--border); padding: var(--space-6) 0 calc(var(--space-8) + 40px); }
-@media (min-width: 860px) { footer { padding-bottom: var(--space-7); } }
-footer p { margin: 0 0 var(--space-2); font-size: 13px; line-height: 20px; color: var(--ink-muted); }
+.footer { margin-top: 64px; border-top: 1px solid var(--line); background: #fff; padding: 28px 0 calc(100px + env(safe-area-inset-bottom)); font-size: 14px; color: var(--muted); }
+@media (min-width: 980px) { .footer { padding-bottom: 32px; } }
+.footer p { margin: 0 0 6px; }
+.footer img { height: 18px; width: auto; margin-bottom: 12px; }
 </style>
 </head>
 <body>
+<div class="page">
 
-<header class="topbar">
-  <div class="wrap topbar__inner">
-    <a class="brand" href="https://monoedge.in" target="_blank" rel="noopener">
-      <img class="brand__logo--dark" src="/assets/monoedge-lockup-horizontal-dark.png" alt="MonoEdge" width="632" height="91">
-      <img class="brand__logo--light" src="/assets/monoedge-lockup-horizontal-light.png" alt="MonoEdge" width="632" height="91">
+<header class="header">
+  <div class="container header__row">
+    <a class="header__logo" href="https://monoedge.in" target="_blank" rel="noopener">
+      <img src="/assets/monoedge-lockup-horizontal-dark.png" alt="MonoEdge" width="632" height="91">
     </a>
-    <a class="site-link" href="https://monoedge.in" target="_blank" rel="noopener">monoedge.in ↗</a>
-    <p class="tagline">AI intelligence for Indian manufacturing: turning data into intelligence.</p>
-  </div>
-</header>
-<div class="contact-strip">
-  <div class="wrap">
-    <p><span>Questions or trouble registering?</span> <span>Krishna Jindal · <a href="tel:+919730922589">97309 22589</a></span></p>
-  </div>
-</div>
-
-<section class="hero" aria-labelledby="hero-title">
-  <div class="wrap hero__inner">
-    <ul class="eyebrow-row">
-      <li class="tag label">2 days · Hands-on</li>
-      <li class="tag label">In person</li>
-    </ul>
-    <div class="hero__grid">
-      <div>
-        <h1 id="hero-title">AI Training</h1>
-        <p class="hero__kicker">For company owners</p>
-        <p class="hero__lead">Two hands-on days to build the right way of thinking about AI, apply it to your own work, and become the leader who adopts it first.</p>
-        <dl class="facts">
-          <div class="wide"><dt class="label">When</dt><dd>Saturday 21 &amp; Sunday 22 November 2026</dd></div>
-          <div><dt class="label">Where</dt><dd>Kalika Steels<small>Jalna</small></dd></div>
-          <div><dt class="label">Fee</dt><dd>₹3,499<small>Inclusive of all taxes</small></dd></div>
-        </dl>
-        <a class="btn btn--on-brand" href="#register">Reserve your seat
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-        <p class="hero__note">Bring your laptop. Pay online or in cash.</p>
-      </div>
-      <div class="trainer-chip">
-        <img src="/assets/trainer-mihirr-sose.jpg" alt="" width="72" height="72">
-        <div>
-          <p class="label" style="opacity:.85">Your trainer</p>
-          <p class="name">Mihirr Sose</p>
-          <p class="role">Founder, Day One Consulting · ISB MBA</p>
-          <a href="https://www.linkedin.com/in/mihirrsose/" target="_blank" rel="noopener">View LinkedIn ↗</a>
-        </div>
-      </div>
+    <div class="header__right">
+      <a class="header__site" href="https://monoedge.in" target="_blank" rel="noopener">monoedge.in</a>
+      <a class="header__call" href="tel:+919730922589">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+        <span><small>Questions? Krishna Jindal</small>97309 22589</span>
+      </a>
     </div>
   </div>
-</section>
+  <div class="container"><p class="header__tagline">MonoEdge · AI intelligence for Indian manufacturing: turning data into intelligence. <a href="https://monoedge.in" target="_blank" rel="noopener">monoedge.in</a></p></div>
+</header>
 
-<div class="statement">
-  <div class="wrap">
-    <blockquote>
-      Be the leader who adopts AI <span>first.</span> Then let it trickle down.
-      <cite>When the owner knows how to use AI well, the rest of the company follows.</cite>
-    </blockquote>
-  </div>
-</div>
+<div class="container layout">
 
-<main>
-  <section class="block" aria-labelledby="learn-title">
-    <div class="wrap">
-      <p class="label section-label">What you will take away</p>
-      <h2 id="learn-title">The approach, not just the tools</h2>
-      <p class="intro">We will introduce you to the tools. But the two days are mostly about the approach: the mental framework that helps you get real value out of AI, in your own job and across your business.</p>
-      <ol class="takeaways">
-        <li><span class="n">01</span><div><h3>A mental framework for AI</h3><p>A clear way to think about what AI is good at, so you can use any tool better.</p></div></li>
-        <li><span class="n">02</span><div><h3>Cut through the noise</h3><p>There is a lot of noise around AI. Learn to understand it clearly and decide for yourself what works for you and what does not.</p></div></li>
-        <li><span class="n">03</span><div><h3>Where to use it, and where not to</h3><p>Choose the parts of your work and business where AI helps, and recognise the places where it does not belong.</p></div></li>
-        <li><span class="n">04</span><div><h3>Your own job, first</h3><p>Apply AI to the work you do every day and raise your own productivity, hands-on, on your own laptop.</p></div></li>
-        <li><span class="n">05</span><div><h3>Lead the adoption</h3><p>Go back as the person in your company who uses AI first and best, and let it trickle down to your team.</p></div></li>
-      </ol>
-      <div class="format">
-        <div><span class="big">2 days</span><p>Sat 21 &amp; Sun 22 Nov</p></div>
-        <div><span class="big">Hands-on</span><p>You work on your own tasks</p></div>
-        <div><span class="big">Laptop</span><p>Bring yours. It is required</p></div>
+  <section class="hero" aria-labelledby="hero-title">
+    <p class="eyebrow">AI Training · For company owners</p>
+    <h1 id="hero-title">Be the leader who adopts AI <em>first.</em></h1>
+    <p class="hero__sub">A <strong>two-day, hands-on workshop</strong> for company owners. Learn the right way to think about AI, apply it to your own job, and let it trickle down to your team.</p>
+    <ul class="meta">
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+        <div><strong>Sat 21 &amp; Sun 22 Nov</strong><span>2026 · 2 full days</span></div>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        <div><strong>Kalika Steels</strong><span>Jalna · in person</span></div>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M2 20h20"/></svg>
+        <div><strong>Bring your laptop</strong><span>You work on your own tasks</span></div>
+      </li>
+    </ul>
+    <div class="hero__cta">
+      <a class="btn btn--light" href="#register">Reserve my seat · ₹3,499
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <div class="led-by">
+        <img src="/assets/trainer-mihirr-sose.jpg" alt="" width="44" height="44">
+        <div><strong>Led by Mihirr Sose</strong>Founder, Day One Consulting · ISB MBA</div>
       </div>
     </div>
   </section>
 
-  <section class="block" aria-labelledby="trainer-title">
-    <div class="wrap">
-      <h2 id="trainer-title">Meet your trainer</h2>
-      <div class="trainer">
+  <section class="proof" aria-label="Trainer's recent work">
+    <p>Mihirr's recent AI programmes include</p>
+    <ul>
+      <li><strong>GEP Global</strong> <span>· AI bootcamp</span></li>
+      <li><strong>BSV Mankind Pharma</strong> <span>· AI bootcamp</span></li>
+      <li><strong>KRM University</strong> <span>· 900+ students</span></li>
+      <li><strong>ISB AI Summit</strong> <span>· demo session</span></li>
+    </ul>
+  </section>
+
+  <section class="section" aria-labelledby="why-title">
+    <p class="eyebrow">Why this workshop</p>
+    <h2 id="why-title">The approach matters more than the tools</h2>
+    <div class="noise">
+      <p>There is a lot of noise around AI.</p>
+      <p>New tools, big claims, and conflicting advice. We will introduce you to the tools, but the two days are mostly about the approach: a mental framework that helps you understand AI clearly and decide for yourself what works for you, what does not, and where it belongs in your business.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="learn-title">
+    <p class="eyebrow">What you will take away</p>
+    <h2 id="learn-title">Five things you leave with</h2>
+    <ol class="learn">
+      <li>
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.1 1 1.8V16h5v-.3c0-.7.4-1.4 1-1.8A6 6 0 0 0 12 3z"/></svg></div>
+        <h3>A mental framework for AI</h3>
+        <p>A clear way to think about what AI is good at, so you get more out of any tool you use.</p>
+      </li>
+      <li>
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 5h18l-7 8v6l-4 2v-8z"/></svg></div>
+        <h3>A filter for the noise</h3>
+        <p>Understand what is real and choose what works for you, and what does not.</p>
+      </li>
+      <li>
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></div>
+        <h3>Where to use it, and where not to</h3>
+        <p>Pick the parts of your work and business where AI helps, and recognise where it does not belong.</p>
+      </li>
+      <li>
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg></div>
+        <h3>Higher productivity in your own job</h3>
+        <p>Hands-on, on your own laptop, applied to the work you do every day.</p>
+      </li>
+      <li class="learn--wide">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="6" r="3"/><circle cx="5" cy="18" r="2.5"/><circle cx="12" cy="18" r="2.5"/><circle cx="19" cy="18" r="2.5"/><path d="M12 9v6.5M12 12l-7 3.5M12 12l7 3.5"/></svg></div>
+        <h3>The confidence to lead adoption</h3>
+        <p>Go back as the person in your company who uses AI first and best. When the owner leads, it trickles down to the team.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="section" aria-labelledby="trainer-title">
+    <p class="eyebrow">Your trainer</p>
+    <h2 id="trainer-title">Learn from Mihirr Sose</h2>
+    <div class="trainer">
+      <div class="trainer__top">
         <img class="trainer__photo" src="/assets/trainer-mihirr-sose.jpg" alt="Mihirr Sose" width="336" height="370" loading="lazy">
         <div>
-          <p class="trainer__name">Mihirr Sose</p>
+          <h3>Mihirr Sose</h3>
           <p class="trainer__role">Founder, Day One Consulting</p>
-          <p class="trainer__bio">An engineer from VNIT Nagpur with an MBA from ISB. Mihirr worked at Tata Motors, led growth and customer success at startups, and founded Furritas before starting Day One Consulting. Today he trains founders, professionals, corporate teams and students to put AI to work.</p>
+          <p class="trainer__bio">Engineer from VNIT Nagpur, MBA from ISB. Mihirr worked at Tata Motors, led growth and customer success at startups, and founded Furritas before starting Day One Consulting, where he trains founders, professionals, corporate teams and students to put AI to work.</p>
           <a class="linkedin" href="https://www.linkedin.com/in/mihirrsose/" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
-            Mihirr on LinkedIn ↗
+            View LinkedIn profile
           </a>
-          <ol class="path" aria-label="Career path">
-            <li>VNIT Nagpur</li><li>Tata Motors</li><li>MBA, ISB</li><li>Startups: growth &amp; customer success</li><li>Founder, Furritas</li><li>Founder, Day One Consulting</li>
-          </ol>
         </div>
       </div>
-      <div class="impact">
-        <div class="stat"><span class="num">147</span><span class="what">Corporate team members</span><p>AI bootcamps at 2 companies: GEP Global and BSV Mankind Pharma.</p></div>
-        <div class="stat"><span class="num">900+</span><span class="what">Students</span><p>"AI Fluency" course at KRM University, Jan–Apr 2026.</p></div>
-        <div class="stat"><span class="num">78</span><span class="what">Professionals</span><p>Vibe-coding across product, consulting and sales.</p></div>
-        <div class="stat"><span class="num">12</span><span class="what">Founders</span><p>Built their first product (MVP) with AI tools.</p></div>
-        <div class="stat"><span class="num">2</span><span class="what">Hackathons hosted</span><p>At KRM University and Insurity.</p></div>
-        <div class="stat"><span class="num">3</span><span class="what">Demo sessions</span><p>ISB AI Summit, The Product Folks, The Builder's Club.</p></div>
+      <div class="stats">
+        <div class="stat"><b>147</b><span>corporate team members trained at GEP Global and BSV Mankind Pharma</span></div>
+        <div class="stat"><b>900+</b><span>students on his "AI Fluency" course, KRM University</span></div>
+        <div class="stat"><b>78</b><span>professionals vibe-coding across product, consulting and sales</span></div>
+        <div class="stat"><b>12</b><span>founders built their first product with AI tools</span></div>
       </div>
-      <p class="source-note">Figures are from Day One Consulting's own impact summary.</p>
+      <p class="trainer__more">Also: 2 hackathons hosted (KRM University, Insurity) and demo sessions at ISB AI Summit, The Product Folks and The Builder's Club.</p>
     </div>
   </section>
 
-  <section class="block register" id="register" aria-labelledby="register-title">
-    <div class="wrap register__grid">
-      <div class="register__aside">
-        <p class="label section-label">Reserve your seat</p>
-        <p class="price">₹3,499<small>Per person, inclusive of all taxes</small></p>
-        <ul class="checklist">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Saturday 21 &amp; Sunday 22 November 2026</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Kalika Steels, Jalna</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Two full hands-on days with Mihirr Sose</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Pay online now, or register and pay in cash</li>
+  <aside class="booking" id="register" aria-labelledby="register-title">
+    <div class="card">
+      <div class="card__head">
+        <h2 class="card__title" id="register-title">Reserve your seat</h2>
+        <p class="price"><b>₹3,499</b><span>per person · all taxes included</span></p>
+        <ul class="card__facts">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Saturday 21 &amp; Sunday 22 November 2026</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Kalika Steels, Jalna</li>
         </ul>
-        <div class="help-box">
-          <p>Need help? Call Krishna Jindal on <a href="tel:+919730922589">97309 22589</a>.</p>
-        </div>
       </div>
 
-      <div class="card">
+      <div class="card__body">
         <div id="view-form">
-          <h2 id="register-title">Register</h2>
-          <p class="card__sub">Takes about two minutes. All fields are required.</p>
+          <div class="progress" aria-live="polite">
+            <div class="progress__row"><strong id="step-name">Your details</strong><span id="step-count">Step 1 of 2</span></div>
+            <div class="progress__bar"><i id="step-bar"></i></div>
+          </div>
           <form id="reg-form" novalidate>
-            <div class="field">
-              <label class="label" for="f-name">Full name</label>
-              <input id="f-name" name="name" type="text" autocomplete="name" maxlength="100" required aria-describedby="e-name">
-              <p class="error" id="e-name" hidden></p>
-            </div>
-            <div class="two">
+            <div id="step-1">
               <div class="field">
-                <label class="label" for="f-phone">Mobile</label>
-                <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="e.g. 98765 43210" required aria-describedby="e-phone">
+                <label for="f-name">Full name</label>
+                <input id="f-name" name="name" type="text" autocomplete="name" maxlength="100" required aria-describedby="e-name">
+                <p class="error" id="e-name" hidden></p>
+              </div>
+              <div class="field">
+                <label for="f-phone">Mobile number</label>
+                <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="98765 43210" required aria-describedby="e-phone">
                 <p class="error" id="e-phone" hidden></p>
               </div>
               <div class="field">
-                <label class="label" for="f-email">Email</label>
-                <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="254" required aria-describedby="e-email">
+                <label for="f-email">Email</label>
+                <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="254" placeholder="you@company.com" required aria-describedby="e-email">
                 <p class="error" id="e-email" hidden></p>
               </div>
+              <button class="btn btn--primary" type="button" id="next">Continue
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </button>
+              <ul class="assure">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Takes about two minutes</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Pay online now, or register and pay in cash</li>
+              </ul>
             </div>
-            <div class="two">
+
+            <div id="step-2" hidden>
               <div class="field">
-                <label class="label" for="f-company">Company</label>
+                <label for="f-company">Company</label>
                 <input id="f-company" name="company" type="text" autocomplete="organization" maxlength="150" required aria-describedby="e-company">
                 <p class="error" id="e-company" hidden></p>
               </div>
               <div class="field">
-                <label class="label" for="f-role">Your role</label>
+                <label for="f-role">Your role</label>
                 <input id="f-role" name="role" type="text" autocomplete="organization-title" maxlength="100" placeholder="e.g. Owner, Director" required aria-describedby="e-role">
                 <p class="error" id="e-role" hidden></p>
               </div>
-            </div>
-            <div class="field">
-              <div class="field-head">
-                <label class="label" for="f-expectations">What do you want from these two days?</label>
-                <button class="mic" id="mic" type="button" aria-pressed="false" aria-controls="f-expectations" hidden>
-                  <span class="mic__dot" aria-hidden="true"></span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M8.5 21h7"/></svg>
-                  <span id="mic-label">Speak</span>
+              <div class="field">
+                <div class="label-row">
+                  <label for="f-expectations">What do you want from these two days?</label>
+                  <button class="mic" id="mic" type="button" aria-pressed="false" aria-controls="f-expectations" hidden>
+                    <span class="mic__dot" aria-hidden="true"></span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg>
+                    <span id="mic-label">Speak</span>
+                  </button>
+                </div>
+                <textarea id="f-expectations" name="expectations" maxlength="1500" required aria-describedby="h-expectations mic-status e-expectations" placeholder="e.g. Use AI for reports and planning, and decide where it fits in my business."></textarea>
+                <p class="mic-status" id="mic-status" aria-live="polite" hidden></p>
+                <div class="row-between">
+                  <p class="hint" id="h-expectations"><span id="hint-type">A sentence or two is enough.</span><span id="hint-speak" hidden>Type it, or tap Speak and say it.</span></p>
+                  <p class="hint" aria-hidden="true"><span id="count">0</span>/1500</p>
+                </div>
+                <p class="error" id="e-expectations" hidden></p>
+              </div>
+              <fieldset class="field">
+                <legend>How would you like to pay?</legend>
+                <div class="options">
+                  <label class="option">
+                    <input type="radio" name="paymentMethod" value="online" checked>
+                    <span><strong>Pay online now</strong><span>UPI, card or netbanking via Razorpay</span></span>
+                  </label>
+                  <label class="option">
+                    <input type="radio" name="paymentMethod" value="cash">
+                    <span><strong>Pay in cash</strong><span>Register now, pay ₹3,499 in cash in Jalna</span></span>
+                  </label>
+                </div>
+              </fieldset>
+              <div class="step-actions">
+                <button class="btn btn--primary" id="submit" type="submit">Pay ₹3,499 &amp; reserve</button>
+                <button class="link-btn" type="button" id="back">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Back
                 </button>
               </div>
-              <textarea id="f-expectations" name="expectations" maxlength="1500" required aria-describedby="h-expectations mic-status e-expectations" placeholder="e.g. I want to use AI for reports and planning, and decide where it fits in my plant."></textarea>
-              <p class="mic-status" id="mic-status" aria-live="polite" hidden></p>
-              <div class="row-between">
-                <p class="hint" id="h-expectations"><span id="hint-type">Type your answer</span><span id="hint-speak" hidden>Type, or tap Speak and talk. We will write it down for you</span>.</p>
-                <p class="hint" aria-hidden="true"><span id="count">0</span>/1500</p>
-              </div>
-              <p class="error" id="e-expectations" hidden></p>
+              <ul class="assure">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Secure payment by Razorpay</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>₹3,499 includes all taxes</li>
+              </ul>
             </div>
-            <fieldset class="field">
-              <legend class="label">How would you like to pay?</legend>
-              <div class="options">
-                <label class="option">
-                  <input type="radio" name="paymentMethod" value="online" checked>
-                  <span><strong>Pay online</strong><span>UPI, cards or netbanking through Razorpay.</span></span>
-                </label>
-                <label class="option">
-                  <input type="radio" name="paymentMethod" value="cash">
-                  <span><strong>Pay in cash</strong><span>Register now, pay ₹3,499 in cash later.</span></span>
-                </label>
-              </div>
-            </fieldset>
-            <button class="btn btn--primary" id="submit" type="submit">Continue to payment · ₹3,499</button>
-            <p class="form-foot">Payments are processed securely by Razorpay.</p>
           </form>
         </div>
 
         <div id="view-processing" class="panel" hidden tabindex="-1">
-          <p class="status status--warn label"><span class="spinner" aria-hidden="true"></span><span id="processing-text">Working</span></p>
-          <p class="muted">Keep this page open.</p>
+          <p class="processing"><span class="spinner" aria-hidden="true"></span><span id="processing-text">Working</span></p>
+          <p>Keep this page open.</p>
         </div>
 
         <div id="view-paid" class="panel" hidden tabindex="-1">
-          <p class="status status--ok label">Payment received</p>
+          <p class="badge badge--ok">Payment received</p>
           <h2>Your seat is confirmed</h2>
-          <p>Your registration ID:</p>
+          <p>Your registration ID</p>
           <output class="regid" data-regid></output>
           <p>Keep this ID for your records. Razorpay usually emails a payment receipt to <strong data-email></strong>.</p>
           <p>See you on Saturday, 21 November at Kalika Steels, Jalna. Bring your laptop.</p>
         </div>
 
         <div id="view-unconfirmed" class="panel" hidden tabindex="-1">
-          <p class="status status--warn label">Payment not confirmed on this page</p>
+          <p class="badge badge--warn">Not confirmed on this page</p>
           <h2>We are checking your payment</h2>
           <p>Razorpay finished the payment, but this page could not confirm it. If money left your account, it is recorded against your registration automatically. You do not need to pay again.</p>
-          <p>Your registration ID:</p>
+          <p>Your registration ID</p>
           <output class="regid" data-regid></output>
           <p>If anything looks wrong, call Krishna Jindal on <a href="tel:+919730922589">97309 22589</a> and quote this ID.</p>
         </div>
 
         <div id="view-cash" class="panel" hidden tabindex="-1">
-          <p class="status status--warn label">Cash payment pending</p>
+          <p class="badge badge--warn">Cash payment pending</p>
           <h2>You are registered</h2>
-          <p>Your registration ID:</p>
+          <p>Your registration ID</p>
           <output class="regid" data-regid></output>
           <p>Please pay ₹3,499 in cash to:</p>
           <address class="payto">
@@ -626,19 +536,19 @@ footer p { margin: 0 0 var(--space-2); font-size: 13px; line-height: 20px; color
         </div>
 
         <div id="view-dismissed" class="panel" hidden tabindex="-1">
-          <p class="status status--warn label">Payment not completed</p>
+          <p class="badge badge--warn">Payment not completed</p>
           <h2>Your seat is not confirmed yet</h2>
           <p>The payment window closed before a payment went through. Your details are saved under this registration ID:</p>
           <output class="regid" data-regid></output>
           <p>No money was taken. If your bank shows a debit, it is refunded or recorded automatically.</p>
           <div class="actions">
             <button class="btn btn--primary" type="button" id="retry-payment">Try payment again</button>
-            <button class="btn btn--secondary" type="button" data-back>Edit details and start over</button>
+            <button class="btn btn--ghost" type="button" data-back>Edit details and start over</button>
           </div>
         </div>
 
         <div id="view-error" class="panel" hidden tabindex="-1">
-          <p class="status status--bad label">Something went wrong</p>
+          <p class="badge badge--bad">Something went wrong</p>
           <h2 id="error-title">Registration not saved</h2>
           <p id="error-text"></p>
           <div class="actions">
@@ -646,20 +556,73 @@ footer p { margin: 0 0 var(--space-2); font-size: 13px; line-height: 20px; color
           </div>
         </div>
       </div>
+      <div class="card__foot">Questions? Call Krishna Jindal on <a href="tel:+919730922589">97309 22589</a></div>
+    </div>
+  </aside>
+
+  <section class="section" aria-labelledby="details-title">
+    <p class="eyebrow">The details</p>
+    <h2 id="details-title">Everything in one place</h2>
+    <dl class="details">
+      <div><dt>When</dt><dd>Saturday 21 &amp; Sunday 22 November 2026<span>Two full days, in person</span></dd></div>
+      <div><dt>Where</dt><dd>Kalika Steels, Jalna</dd></div>
+      <div><dt>For</dt><dd>Company owners<span>Led by Mihirr Sose</span></dd></div>
+      <div><dt>Bring</dt><dd>Your laptop<span>Required. The workshop is hands-on</span></dd></div>
+      <div><dt>Fee</dt><dd>₹3,499 per person<span>Inclusive of all taxes</span></dd></div>
+      <div><dt>Payment</dt><dd>Online or cash<span>UPI, card or netbanking via Razorpay, or cash in Jalna</span></dd></div>
+    </dl>
+  </section>
+
+  <section class="section" aria-labelledby="faq-title">
+    <p class="eyebrow">Questions</p>
+    <h2 id="faq-title">Frequently asked</h2>
+    <div class="faq">
+      <details>
+        <summary>Who is this workshop for?</summary>
+        <p>Company owners who want to understand AI properly, use it in their own work first, and lead its adoption in their company.</p>
+      </details>
+      <details>
+        <summary>Is it about specific AI tools?</summary>
+        <p>We will introduce you to tools, but the focus is the approach: a mental framework that helps you use AI well, cut through the noise, and decide where it fits and where it does not.</p>
+      </details>
+      <details>
+        <summary>What should I bring?</summary>
+        <p>Your laptop. The workshop is hands-on and you will work on your own tasks.</p>
+      </details>
+      <details>
+        <summary>How do I pay?</summary>
+        <p>Online through Razorpay (UPI, card or netbanking) when you register, or choose cash and pay ₹3,499 to JSC Seed Private Limited, Bus Stand Road, 29, Jalna 431203. The fee includes all taxes.</p>
+      </details>
+      <details>
+        <summary>What happens after I register?</summary>
+        <p>You see a registration ID on screen straight away. If you paid online, Razorpay usually emails a payment receipt. If you chose cash, quote your registration ID when you pay.</p>
+      </details>
+      <details>
+        <summary>Who do I contact with questions?</summary>
+        <p>Krishna Jindal, <a href="tel:+919730922589">97309 22589</a>.</p>
+      </details>
+    </div>
+    <div class="final">
+      <h2>Ready to lead with AI?</h2>
+      <p>Two days in Jalna, Sat 21 &amp; Sun 22 November. ₹3,499.</p>
+      <a class="btn btn--light" href="#register">Reserve my seat</a>
     </div>
   </section>
-</main>
+</div>
 
-<footer>
-  <div class="wrap">
-    <p><strong>MonoEdge</strong> · AI intelligence for Indian manufacturing: turning data into intelligence. <a href="https://monoedge.in" target="_blank" rel="noopener">monoedge.in</a></p>
+<footer class="footer">
+  <div class="container">
+    <img src="/assets/monoedge-lockup-horizontal-dark.png" alt="MonoEdge" width="632" height="91">
+    <p>AI intelligence for Indian manufacturing: turning data into intelligence. <a href="https://monoedge.in" target="_blank" rel="noopener">monoedge.in</a></p>
     <p>Questions: Krishna Jindal, <a href="tel:+919730922589">97309 22589</a></p>
   </div>
 </footer>
 
 <div class="sticky-cta" id="sticky-cta">
-  <p><strong>₹3,499</strong>Sat 21 &amp; Sun 22 Nov · Jalna</p>
-  <a class="btn btn--primary" href="#register">Register</a>
+  <p><b>₹3,499</b>Sat 21 &amp; Sun 22 Nov · Jalna</p>
+  <a class="btn btn--primary" href="#register">Reserve seat</a>
+</div>
+
 </div>
 
 <script type="module">
@@ -669,6 +632,8 @@ const form = document.getElementById('reg-form');
 const submit = document.getElementById('submit');
 const views = ['form', 'processing', 'paid', 'unconfirmed', 'cash', 'dismissed', 'error'];
 const FIELDS = ['name', 'email', 'phone', 'company', 'role', 'expectations'];
+const STEP1 = ['name', 'phone', 'email'];
+const touched = new Set();
 let busy = false;
 let pending = null; // { order, registrationId } for the current online attempt
 
@@ -700,29 +665,47 @@ function method() {
 }
 
 function syncSubmitLabel() {
-  submit.textContent = method() === 'cash' ? 'Register · pay ₹3,499 in cash' : 'Continue to payment · ₹3,499';
+  submit.textContent = method() === 'cash' ? 'Register · pay in cash' : 'Pay ₹3,499 & reserve';
 }
 
-function setErrors(errors) {
-  let first = null;
-  for (const f of FIELDS) {
-    const input = form.elements[f];
-    const msg = document.getElementById(`e-${f}`);
-    if (errors[f]) {
-      input.setAttribute('aria-invalid', 'true');
-      msg.textContent = errors[f];
-      msg.hidden = false;
-      first ??= input;
-    } else {
-      input.removeAttribute('aria-invalid');
-      msg.hidden = true;
-    }
+function setStep(n) {
+  document.getElementById('step-1').hidden = n !== 1;
+  document.getElementById('step-2').hidden = n !== 2;
+  document.getElementById('step-name').textContent = n === 1 ? 'Your details' : 'About you and payment';
+  document.getElementById('step-count').textContent = `Step ${n} of 2`;
+  document.getElementById('step-bar').style.width = n === 1 ? '50%' : '100%';
+}
+
+function showFieldError(f, message) {
+  const input = form.elements[f];
+  const msg = document.getElementById(`e-${f}`);
+  if (message) {
+    input.setAttribute('aria-invalid', 'true');
+    msg.textContent = message;
+    msg.hidden = false;
+  } else {
+    input.removeAttribute('aria-invalid');
+    msg.hidden = true;
   }
-  if (first) first.focus();
+}
+
+// Shows errors for `fields` only; returns the first invalid input.
+function applyErrors(errors, fields) {
+  let first = null;
+  for (const f of fields) {
+    showFieldError(f, errors[f]);
+    if (errors[f]) first ??= form.elements[f];
+  }
+  return first;
 }
 
 function payload() {
   return Object.fromEntries(FIELDS.map((f) => [f, form.elements[f].value]));
+}
+
+function currentErrors() {
+  const check = validateRegistration(payload());
+  return check.ok ? {} : check.errors;
 }
 
 async function post(path, body) {
@@ -770,14 +753,29 @@ function openCheckout() {
   rzp.open();
 }
 
+function goNext() {
+  STEP1.forEach((f) => touched.add(f));
+  const first = applyErrors(currentErrors(), STEP1);
+  if (first) { first.focus(); return; }
+  setStep(2);
+  form.elements.company.focus();
+}
+
 async function onSubmit(event) {
   event.preventDefault();
+  // Enter in a step-1 field moves to step 2 instead of submitting.
+  if (document.getElementById('step-2').hidden) { goNext(); return; }
   if (busy) return;
   dictation.stop();
+  FIELDS.forEach((f) => touched.add(f));
   const input = payload();
   const check = validateRegistration(input);
-  setErrors(check.ok ? {} : check.errors);
-  if (!check.ok) return;
+  if (!check.ok) {
+    if (STEP1.some((f) => check.errors[f])) setStep(1);
+    applyErrors(check.errors, FIELDS)?.focus();
+    return;
+  }
+  applyErrors({}, FIELDS);
 
   busy = true;
   submit.disabled = true;
@@ -787,7 +785,8 @@ async function onSubmit(event) {
     const { status, data } = await post(cash ? '/api/register-cash' : '/api/create-order', input);
     if (status === 400 && data.errors) {
       show('form');
-      setErrors(data.errors);
+      if (STEP1.some((f) => data.errors[f])) setStep(1);
+      applyErrors(data.errors, FIELDS)?.focus();
       return;
     }
     if (!data.ok) {
@@ -809,6 +808,19 @@ async function onSubmit(event) {
     busy = false;
     submit.disabled = false;
   }
+}
+
+// Validate a field when the user leaves it, and clear its error as soon as it becomes valid.
+for (const f of FIELDS) {
+  const input = form.elements[f];
+  input.addEventListener('blur', () => {
+    if (!input.value.trim() && !touched.has(f)) return;
+    touched.add(f);
+    showFieldError(f, currentErrors()[f]);
+  });
+  input.addEventListener('input', () => {
+    if (input.getAttribute('aria-invalid') === 'true' && !currentErrors()[f]) showFieldError(f, null);
+  });
 }
 
 // ---- Voice input for the expectations box (browser speech-to-text) ----
@@ -897,13 +909,19 @@ const dictation = (() => {
   return { stop };
 })();
 
-// ---- Sticky register bar: hidden while the registration card is on screen ----
+// ---- Sticky bar: hidden while the hero button or the booking card is on screen ----
 const sticky = document.getElementById('sticky-cta');
-new IntersectionObserver(([entry]) => {
-  sticky.classList.toggle('is-hidden', entry.isIntersecting);
-}, { threshold: 0.05 }).observe(document.getElementById('register'));
+const onScreen = new Map();
+const observer = new IntersectionObserver((entries) => {
+  for (const e of entries) onScreen.set(e.target, e.isIntersecting);
+  sticky.classList.toggle('is-hidden', [...onScreen.values()].some(Boolean));
+}, { threshold: 0.05 });
+observer.observe(document.getElementById('register'));
+observer.observe(document.querySelector('.hero__cta'));
 
 form.addEventListener('submit', onSubmit);
+document.getElementById('next').addEventListener('click', goNext);
+document.getElementById('back').addEventListener('click', () => { dictation.stop(); setStep(1); form.elements.name.focus(); });
 form.addEventListener('change', (e) => { if (e.target.name === 'paymentMethod') syncSubmitLabel(); });
 form.elements.expectations.addEventListener('input', (e) => {
   document.getElementById('count').textContent = e.target.value.length;
@@ -911,6 +929,7 @@ form.elements.expectations.addEventListener('input', (e) => {
 document.getElementById('retry-payment').addEventListener('click', openCheckout);
 document.querySelectorAll('[data-back]').forEach((b) => b.addEventListener('click', () => {
   pending = null;
+  setStep(1);
   show('form');
 }));
 syncSubmitLabel();

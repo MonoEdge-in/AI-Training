@@ -44,7 +44,13 @@ Recorded 21 Oct 2026.
   - sheet outage → `500`
   - cash rows never touched
   - IST timestamps
-- **Browser run after the redesign (Chromium at 320, 390 and 1280 px, light and dark): 34 of 34 checks pass.** Added checks:
+- **Browser run after the second redesign (two-step form, sticky booking card; Chromium at 320, 390 and 1280 px): 43 of 43 checks pass.** On top of the payment, cash, voice and validation checks, this covers:
+  - step 1 blocks Continue until name, mobile and email are valid; errors show on leaving a field and clear once fixed
+  - Back keeps entered values; server errors on step-1 fields send the user back to step 1
+  - on desktop the booking card sits beside the hero and stays in view while scrolling
+  - the sticky bar on phones is hidden over the hero button and the booking card
+  - FAQ opens
+- **Browser run after the first redesign (Chromium at 320, 390 and 1280 px, light and dark): 34 of 34 checks pass.** Added checks:
   - voice input with a simulated recognizer: appends to typed text with no duplication, counter updates, stop works
   - denied microphone shows a message
   - mic hidden when the browser lacks speech recognition

@@ -4,7 +4,7 @@ Registration page for the AI Training workshop (21 & 22 November 2026, Kalika St
 People register and either pay online through Razorpay Checkout or choose to pay in cash. Every
 registration is one row in a Google Sheet.
 
-- Static `index.html` at the root, styled with the MonoEdge Systems design system tokens.
+- Static `index.html` at the root, using MonoEdge brand colours and logo, with Inter for text.
 - Vercel Node.js functions in `/api` (Web handlers, ESM, Node 24).
 - One dependency: `google-auth-library` for the Sheets service account. Razorpay is called with `fetch`.
 
