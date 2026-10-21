@@ -35,6 +35,12 @@ Webhook rules:
   To close that window, after writing `payment_failed` the handler asks Razorpay whether the order
   has a captured payment and restores `paid` if so.
 
+Voice input: the expectations box has a **Speak** button that uses the browser's built-in
+speech-to-text (Web Speech API, language `en-IN`). The text appears in the box, and nothing is
+recorded or sent anywhere by this site. The browser vendor (e.g. Google for Chrome) does the
+transcription. Where the browser has no speech recognition (e.g. Firefox), the button is hidden
+and people type. It works best in Chrome on Android. Support in iPhone Safari is inconsistent.
+
 Sheet writes use `valueInputOption=RAW`. Names starting with `=` stay text, and phone numbers stay
 10-digit strings.
 
@@ -159,7 +165,7 @@ npx vercel dev                # runs index.html and /api locally
 
 ```
 index.html                 the page
-assets/                    MonoEdge logo files (from the design system)
+assets/                    MonoEdge logo files (from the design system), trainer photo
 api/*.js                   Vercel function entry points (thin)
 lib/handlers.js            request logic, with I/O injected for tests
 lib/validate.js            input rules, shared by browser and server

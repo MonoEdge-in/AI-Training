@@ -2,11 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI Training · Register</title>
-<meta name="description" content="Hands-on AI workshop on 21 and 22 November 2026 at Kalika Steels, Jalna. Fee ₹3,499 inclusive of all taxes.">
-<meta property="og:title" content="AI Training · 21 & 22 November 2026">
-<meta property="og:description" content="Hands-on AI workshop at Kalika Steels, Jalna. Fee ₹3,499 inclusive of all taxes.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI Training for Company Owners · Register</title>
+<meta name="description" content="A two-day, hands-on AI workshop for company owners. Saturday 21 and Sunday 22 November 2026 at Kalika Steels, Jalna. ₹3,499 inclusive of all taxes.">
+<meta property="og:title" content="AI Training for Company Owners · Sat 21 & Sun 22 Nov 2026">
+<meta property="og:description" content="Two days, hands-on, at Kalika Steels, Jalna. Led by Mihirr Sose. ₹3,499 inclusive of all taxes.">
+<meta property="og:image" content="/assets/trainer-mihirr-sose.jpg">
+<meta name="theme-color" content="#204494">
 <link rel="icon" type="image/png" href="/assets/monoedge-symbol-dark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,10 +24,12 @@
   --surface-muted: #ececec;
   --surface-raised: #f6f6f6;
   --surface-brand: var(--monoedge-blue);
+  --surface-accent: var(--ice-blue);
   --ink: #000000;
   --ink-muted: #4a4a4a;
   --ink-accent: var(--monoedge-blue);
   --ink-on-brand: #ffffff;
+  --ink-on-accent: #000000;
   --border: #d4d4d4;
   --border-strong: #6b6b6b;
   --focus: var(--monoedge-blue);
@@ -38,7 +42,7 @@
 
   --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
   --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 64px;
-  --radius-md: 4px; --radius-lg: 8px;
+  --radius-sm: 2px; --radius-md: 4px; --radius-lg: 8px;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -74,7 +78,8 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body {
   margin: 0;
   background: var(--surface);
@@ -89,74 +94,198 @@ body {
   outline-offset: 2px;
 }
 a { color: var(--ink-accent); }
-.wrap { max-width: 640px; margin: 0 auto; padding: 0 var(--space-4); }
+img { max-width: 100%; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 var(--space-4); }
+@media (min-width: 720px) { .wrap { padding: 0 var(--space-6); } }
 .label {
   font-size: 12px; line-height: 16px; font-weight: 500;
   letter-spacing: 0.12em; text-transform: uppercase;
 }
 .muted { color: var(--ink-muted); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 [hidden] { display: none !important; }
 
-/* Hero: the one full-bleed brand ground on the page. */
-.hero {
-  background: var(--surface-brand);
-  color: var(--ink-on-brand);
-  padding: var(--space-6) 0 var(--space-7);
+/* ---------- Top strip: company, website, contact ---------- */
+.topbar { border-bottom: 1px solid var(--border); background: var(--surface); }
+.topbar__inner {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: var(--space-2) var(--space-4); padding-block: var(--space-3);
 }
-.hero__logo { display: block; height: 22px; width: auto; margin-bottom: var(--space-7); }
-.hero .label { color: var(--ink-on-brand); opacity: 0.85; margin: 0 0 var(--space-3); }
+.brand { display: flex; align-items: center; gap: var(--space-3); min-width: 0; }
+.brand img { height: 18px; width: auto; display: block; flex: none; }
+.brand__logo--light { display: none !important; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .brand__logo--dark { display: none !important; }
+  :root:not([data-theme="light"]) .brand__logo--light { display: block !important; }
+}
+.site-link { font-size: 13px; line-height: 20px; font-weight: 500; text-decoration: none; }
+.site-link:hover { text-decoration: underline; }
+.tagline { flex-basis: 100%; margin: 0; font-size: 13px; line-height: 20px; color: var(--ink-muted); }
+.contact-strip { background: var(--surface-muted); }
+.contact-strip p {
+  margin: 0; padding: var(--space-2) 0; font-size: 13px; line-height: 20px;
+  display: flex; flex-wrap: wrap; gap: 0 var(--space-2);
+}
+.contact-strip a { font-weight: 700; }
+
+/* ---------- Hero ---------- */
+.hero { background: var(--surface-brand); color: var(--ink-on-brand); }
+.hero__inner { padding-block: var(--space-7); }
+.hero .label { color: var(--ink-on-brand); }
+.eyebrow-row { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: 0 0 var(--space-5); padding: 0; list-style: none; }
+.tag {
+  display: inline-flex; align-items: center; height: 26px; padding: 0 var(--space-2);
+  border: 1px solid rgba(255, 255, 255, 0.55); border-radius: var(--radius-sm);
+}
 .hero h1 {
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: clamp(36px, 11vw, 64px);
-  line-height: 1.0;
-  letter-spacing: -0.01em;
+  font-size: clamp(40px, 11vw, 68px);
+  line-height: 0.98;
+  white-space: nowrap;
+  letter-spacing: -0.015em;
   text-transform: uppercase;
   margin: 0 0 var(--space-5);
 }
+.hero h1 { margin-bottom: var(--space-2); }
+.hero__kicker { font-family: var(--font-display); text-transform: uppercase; color: var(--ice-blue); font-size: clamp(22px, 6vw, 40px); line-height: 1.1; margin: 0 0 var(--space-5); }
+.hero__lead { font-size: 17px; line-height: 28px; margin: 0 0 var(--space-6); max-width: 34em; }
+.hero__grid { display: grid; gap: var(--space-6); }
+@media (min-width: 860px) { .hero__grid { grid-template-columns: 1.35fr 1fr; align-items: end; } }
+
 .facts {
-  display: grid; gap: var(--space-4);
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  margin: 0; padding: var(--space-5) 0 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.35);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+  margin: 0 0 var(--space-5); background: rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.35);
 }
-.facts div { margin: 0; }
-.facts dt { margin: 0 0 var(--space-1); }
-.facts dd { margin: 0; font-size: 15px; line-height: 22px; font-weight: 500; }
-.facts dd span { display: block; font-weight: 400; font-size: 13px; opacity: 0.85; }
+.facts > div { background: var(--surface-brand); padding: var(--space-3) var(--space-4); }
+.facts .wide { grid-column: 1 / -1; }
+.facts dt { margin: 0 0 var(--space-1); opacity: 0.85; }
+.facts dd { margin: 0; font-size: 15px; line-height: 22px; font-weight: 700; }
+.facts dd small { display: block; font-size: 12px; line-height: 18px; font-weight: 400; opacity: 0.85; }
 
-main { padding: var(--space-7) 0 var(--space-8); }
-section + section { margin-top: var(--space-7); }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
+  min-height: 52px; padding: var(--space-2) var(--space-5);
+  border-radius: var(--radius-md); border: 1px solid transparent;
+  font-family: var(--font-mono); font-size: 15px; font-weight: 700;
+  cursor: pointer; text-decoration: none;
+}
+.btn--on-brand { background: #ffffff; color: var(--monoedge-blue); width: 100%; }
+@media (min-width: 560px) { .btn--on-brand { width: auto; } }
+.btn--primary { background: var(--surface-brand); color: var(--ink-on-brand); width: 100%; }
+.btn--secondary { background: transparent; color: var(--ink); border-color: var(--border-strong); width: 100%; }
+.btn[disabled] { opacity: 0.6; cursor: progress; }
+.btn svg { width: 18px; height: 18px; flex: none; }
+.hero__note { margin: var(--space-3) 0 0; font-size: 13px; line-height: 20px; opacity: 0.85; }
 
-/* Section title with the brand's eyebrow block. */
+.trainer-chip {
+  display: flex; gap: var(--space-4); align-items: center;
+  padding: var(--space-4); border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: var(--radius-lg);
+}
+.trainer-chip img { width: 72px; height: 72px; object-fit: cover; border-radius: var(--radius-md); flex: none; }
+.trainer-chip p { margin: 0; }
+.trainer-chip .name { font-size: 17px; line-height: 24px; font-weight: 700; }
+.trainer-chip .role { font-size: 13px; line-height: 20px; opacity: 0.85; }
+.trainer-chip a { color: var(--ink-on-brand); font-size: 13px; line-height: 20px; font-weight: 500; }
+
+/* ---------- Sections ---------- */
+section.block { padding: var(--space-7) 0; }
+section.block + section.block { border-top: 1px solid var(--border); }
+.section-label { color: var(--ink-muted); margin: 0 0 var(--space-3); }
 h2 {
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: 22px; line-height: 28px;
+  font-size: clamp(24px, 6vw, 36px); line-height: 1.12;
   text-transform: uppercase;
-  margin: 0 0 var(--space-4);
-  display: flex; align-items: center; gap: var(--space-4);
+  margin: 0 0 var(--space-5);
+  display: flex; align-items: baseline; gap: var(--space-4);
 }
 h2::before {
-  content: ""; flex: none;
-  width: 0.45em; height: 1.1em;
-  background: var(--ink-accent);
+  content: ""; flex: none; align-self: center;
+  width: 0.45em; height: 1.1em; background: var(--ink-accent);
 }
-.lead { font-size: 16px; line-height: 28px; margin: 0 0 var(--space-4); }
-.lead:last-child { margin-bottom: 0; }
+.intro { font-size: 17px; line-height: 28px; margin: 0 0 var(--space-6); max-width: 40em; }
 
-/* Card */
+/* Statement band */
+.statement { background: var(--surface-muted); }
+.statement blockquote {
+  margin: 0; padding: var(--space-7) 0;
+  font-family: var(--font-display); font-weight: 400; text-transform: uppercase;
+  font-size: clamp(24px, 6.4vw, 44px); line-height: 1.1;
+}
+.statement blockquote span { color: var(--ink-accent); }
+.statement cite { display: block; margin-top: var(--space-4); font-family: var(--font-mono); font-style: normal; text-transform: none; font-size: 15px; line-height: 24px; color: var(--ink-muted); }
+
+/* Takeaways */
+.takeaways { list-style: none; margin: 0; padding: 0; display: grid; gap: 1px; background: var(--border); border: 1px solid var(--border); }
+@media (min-width: 720px) { .takeaways { grid-template-columns: 1fr 1fr; } .takeaways li:last-child:nth-child(odd) { grid-column: 1 / -1; } }
+.takeaways li { background: var(--surface); padding: var(--space-5) var(--space-4); display: grid; grid-template-columns: auto 1fr; gap: var(--space-4); }
+@media (min-width: 720px) { .takeaways li { padding: var(--space-5); } }
+.takeaways .n { font-family: var(--font-display); font-size: 28px; line-height: 30px; color: var(--ink-accent); }
+.takeaways h3 { margin: 0 0 var(--space-2); font-size: 16px; line-height: 24px; font-weight: 700; }
+.takeaways p { margin: 0; color: var(--ink-muted); font-size: 14px; line-height: 23px; }
+
+/* Format */
+.format { display: grid; grid-template-columns: 1fr; gap: var(--space-3); margin-top: var(--space-6); }
+@media (min-width: 480px) { .format { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.format > div { border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-4) var(--space-3); background: var(--surface-raised); }
+.format .big { display: block; font-family: var(--font-display); font-size: clamp(20px, 5.4vw, 30px); line-height: 1.1; text-transform: uppercase; color: var(--ink-accent); margin-bottom: var(--space-2); }
+.format p { margin: 0; font-size: 13px; line-height: 20px; color: var(--ink-muted); }
+
+/* Trainer */
+.trainer { display: grid; gap: var(--space-5); }
+@media (min-width: 720px) { .trainer { grid-template-columns: 220px 1fr; gap: var(--space-6); } .trainer__photo { max-width: 220px; } }
+.trainer__photo { width: 100%; max-width: 168px; aspect-ratio: 336 / 370; object-fit: cover; border-radius: var(--radius-lg); display: block; }
+.trainer__name { font-family: var(--font-display); font-size: 22px; line-height: 28px; text-transform: uppercase; margin: 0 0 var(--space-1); }
+.trainer__role { margin: 0 0 var(--space-4); color: var(--ink-muted); }
+.trainer__bio { margin: 0 0 var(--space-4); }
+.linkedin {
+  display: inline-flex; align-items: center; gap: var(--space-2); min-height: 44px;
+  padding: 0 var(--space-4); border: 1px solid var(--border-strong); border-radius: var(--radius-md);
+  color: var(--ink); text-decoration: none; font-weight: 500; font-size: 14px;
+}
+.linkedin svg { width: 18px; height: 18px; color: var(--ink-accent); }
+.path { list-style: none; margin: var(--space-6) 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.path li { font-size: 13px; line-height: 20px; padding: var(--space-1) var(--space-3); border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--surface-raised); }
+.path li + li::before { content: "→ "; color: var(--ink-accent); }
+.impact { display: grid; gap: var(--space-3); margin-top: var(--space-6); }
+@media (min-width: 560px) { .impact { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 860px) { .impact { grid-template-columns: repeat(3, 1fr); } }
+.stat { border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-4); }
+.stat .num { display: block; font-size: 30px; line-height: 36px; font-weight: 700; color: var(--ink-accent); letter-spacing: -0.01em; }
+.stat .what { display: block; font-weight: 700; font-size: 14px; line-height: 22px; margin: var(--space-1) 0; }
+.stat p { margin: 0; font-size: 13px; line-height: 20px; color: var(--ink-muted); }
+.source-note { margin: var(--space-3) 0 0; font-size: 12px; line-height: 18px; color: var(--ink-muted); }
+
+/* ---------- Register ---------- */
+.register { background: var(--surface-muted); }
+.register__grid { display: grid; gap: var(--space-6); }
+@media (min-width: 860px) { .register__grid { grid-template-columns: 1fr 1.5fr; align-items: start; } .register__aside { position: sticky; top: var(--space-5); } }
+.price { font-size: 40px; line-height: 44px; font-weight: 700; margin: 0; }
+.price small { display: block; font-size: 13px; line-height: 20px; font-weight: 400; color: var(--ink-muted); }
+.checklist { list-style: none; margin: var(--space-5) 0 0; padding: 0; display: grid; gap: var(--space-3); }
+.checklist li { display: grid; grid-template-columns: 20px 1fr; gap: var(--space-3); font-size: 14px; line-height: 22px; }
+.checklist svg { width: 20px; height: 20px; color: var(--success); margin-top: 1px; }
+.help-box { margin-top: var(--space-5); padding: var(--space-4); border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--surface); font-size: 14px; line-height: 22px; }
+.help-box p { margin: 0; }
+.help-box a { font-weight: 700; }
+
 .card {
-  background: var(--surface-raised);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: var(--space-5) var(--space-4);
 }
 @media (min-width: 560px) { .card { padding: var(--space-6); } }
+.card h2 { font-size: 24px; margin-bottom: var(--space-2); }
+.card__sub { margin: 0 0 var(--space-5); color: var(--ink-muted); font-size: 14px; line-height: 22px; }
 
-/* Form */
 .field { margin-bottom: var(--space-5); }
-.field > label, .field > legend { display: block; margin: 0 0 var(--space-2); padding: 0; }
+.field > label, .field > legend, .field-head label { display: block; margin: 0 0 var(--space-2); padding: 0; }
+.two { display: grid; gap: 0 var(--space-4); }
+@media (min-width: 560px) { .two { grid-template-columns: 1fr 1fr; } }
 input[type="text"], input[type="email"], input[type="tel"], textarea {
   width: 100%;
   background: var(--surface);
@@ -166,16 +295,33 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
   font-family: var(--font-mono);
   font-size: 16px; /* 16px stops iOS zooming into the field */
   line-height: 24px;
-  padding: var(--space-2) var(--space-3);
-  min-height: 44px;
+  padding: var(--space-3);
+  min-height: 48px;
 }
-textarea { min-height: 132px; resize: vertical; }
+textarea { min-height: 148px; resize: vertical; }
 input:focus, textarea:focus { border-color: var(--focus); }
 [aria-invalid="true"] { border-color: var(--danger) !important; }
 .hint, .error { font-size: 13px; line-height: 20px; margin: var(--space-1) 0 0; }
 .hint { color: var(--ink-muted); }
 .error { color: var(--danger); }
 .row-between { display: flex; justify-content: space-between; gap: var(--space-3); }
+
+.field-head { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--space-3); margin-bottom: var(--space-2); }
+.field-head label { margin: 0; }
+.mic {
+  display: inline-flex; align-items: center; gap: var(--space-2); flex: none;
+  min-height: 40px; padding: 0 var(--space-3);
+  border: 1px solid var(--ink-accent); border-radius: var(--radius-md);
+  background: var(--surface); color: var(--ink-accent);
+  font-family: var(--font-mono); font-size: 14px; font-weight: 700; cursor: pointer;
+}
+.mic svg { width: 18px; height: 18px; }
+.mic[aria-pressed="true"] { background: var(--danger); border-color: var(--danger); color: #ffffff; }
+.mic[aria-pressed="true"] .mic__dot { display: inline-block; }
+.mic__dot { display: none; width: 8px; height: 8px; border-radius: 9999px; background: currentColor; animation: pulse 1.2s ease-in-out infinite; }
+@keyframes pulse { 50% { opacity: 0.25; } }
+@media (prefers-reduced-motion: reduce) { .mic__dot { animation: none; } }
+.mic-status { font-size: 13px; line-height: 20px; margin: var(--space-1) 0 0; color: var(--ink-accent); font-weight: 500; }
 
 fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
 .options { display: grid; gap: var(--space-3); }
@@ -190,21 +336,9 @@ fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
 }
 .option:has(input:checked) { border-color: var(--ink-accent); outline: 1px solid var(--ink-accent); outline-offset: -2px; }
 .option input { margin: 5px 0 0; accent-color: var(--monoedge-blue); width: 16px; height: 16px; flex: none; }
-.option strong { display: block; font-weight: 500; }
+.option strong { display: block; font-weight: 700; }
 .option span { display: block; font-size: 13px; line-height: 20px; color: var(--ink-muted); }
-
-.btn {
-  display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
-  min-height: 48px; padding: var(--space-2) var(--space-4);
-  border-radius: var(--radius-md);
-  border: 1px solid transparent;
-  font-family: var(--font-mono); font-size: 15px; font-weight: 500;
-  cursor: pointer; text-decoration: none;
-}
-.btn--primary { background: var(--surface-brand); color: var(--ink-on-brand); width: 100%; }
-.btn--secondary { background: transparent; color: var(--ink); border-color: var(--border-strong); width: 100%; }
-.btn[disabled] { opacity: 0.6; cursor: progress; }
-.form-foot { margin: var(--space-3) 0 0; font-size: 13px; line-height: 20px; color: var(--ink-muted); }
+.form-foot { margin: var(--space-3) 0 0; font-size: 13px; line-height: 20px; color: var(--ink-muted); text-align: center; }
 
 /* Result panels */
 .panel h2 { margin-bottom: var(--space-3); }
@@ -213,22 +347,19 @@ fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
   display: block;
   margin: var(--space-2) 0 var(--space-5);
   padding: var(--space-3) var(--space-4);
-  background: var(--surface);
+  background: var(--surface-raised);
   border: 1px solid var(--border-strong);
   border-radius: var(--radius-md);
   font-size: 22px; line-height: 28px; font-weight: 700; letter-spacing: 0.06em;
 }
-.status {
-  display: inline-flex; align-items: center; gap: var(--space-2);
-  margin: 0 0 var(--space-3);
-}
+.status { display: inline-flex; align-items: center; gap: var(--space-2); margin: 0 0 var(--space-3); }
 .status::before { content: ""; width: 8px; height: 8px; border-radius: 9999px; background: currentColor; }
 .status--ok { color: var(--success); }
 .status--warn { color: var(--warning); }
 .status--bad { color: var(--danger); }
 .payto {
   margin: 0 0 var(--space-5); padding: var(--space-4);
-  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md);
+  background: var(--surface-raised); border: 1px solid var(--border); border-radius: var(--radius-md);
   font-style: normal;
 }
 .payto p { margin: 0; }
@@ -241,76 +372,206 @@ fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
 @keyframes spin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .spinner { animation-duration: 2.4s; } }
 
-footer { border-top: 1px solid var(--border); padding: var(--space-5) 0 var(--space-7); }
-footer p { margin: 0; font-size: 13px; line-height: 20px; color: var(--ink-muted); }
+/* Sticky register bar on phones */
+.sticky-cta {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 10;
+  background: var(--surface); border-top: 1px solid var(--border);
+  padding: var(--space-3) var(--space-4) calc(var(--space-3) + env(safe-area-inset-bottom));
+  display: flex; align-items: center; justify-content: space-between; gap: var(--space-3);
+  transition: transform 160ms ease;
+}
+.sticky-cta.is-hidden { transform: translateY(110%); }
+.sticky-cta p { margin: 0; font-size: 13px; line-height: 18px; }
+.sticky-cta strong { display: block; font-size: 16px; line-height: 22px; }
+.sticky-cta .btn { min-height: 44px; padding: 0 var(--space-4); width: auto; }
+@media (min-width: 860px) { .sticky-cta { display: none; } }
+
+footer { border-top: 1px solid var(--border); padding: var(--space-6) 0 calc(var(--space-8) + 40px); }
+@media (min-width: 860px) { footer { padding-bottom: var(--space-7); } }
+footer p { margin: 0 0 var(--space-2); font-size: 13px; line-height: 20px; color: var(--ink-muted); }
 </style>
 </head>
 <body>
 
-<header class="hero">
-  <div class="wrap">
-    <img class="hero__logo" src="/assets/monoedge-lockup-horizontal-light.png" alt="MonoEdge" width="632" height="91">
-    <p class="label">Hands-on workshop · In person</p>
-    <h1>AI Training</h1>
-    <dl class="facts">
-      <div><dt class="label">Dates</dt><dd>21 &amp; 22 November 2026</dd></div>
-      <div><dt class="label">Venue</dt><dd>Kalika Steels, Jalna</dd></div>
-      <div><dt class="label">Fee</dt><dd>₹3,499<span>Inclusive of all taxes</span></dd></div>
-    </dl>
+<header class="topbar">
+  <div class="wrap topbar__inner">
+    <a class="brand" href="https://monoedge.in" target="_blank" rel="noopener">
+      <img class="brand__logo--dark" src="/assets/monoedge-lockup-horizontal-dark.png" alt="MonoEdge" width="632" height="91">
+      <img class="brand__logo--light" src="/assets/monoedge-lockup-horizontal-light.png" alt="MonoEdge" width="632" height="91">
+    </a>
+    <a class="site-link" href="https://monoedge.in" target="_blank" rel="noopener">monoedge.in ↗</a>
+    <p class="tagline">AI intelligence for Indian manufacturing: turning data into intelligence.</p>
   </div>
 </header>
+<div class="contact-strip">
+  <div class="wrap">
+    <p><span>Questions or trouble registering?</span> <span>Krishna Jindal · <a href="tel:+919730922589">97309 22589</a></span></p>
+  </div>
+</div>
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap hero__inner">
+    <ul class="eyebrow-row">
+      <li class="tag label">2 days · Hands-on</li>
+      <li class="tag label">In person</li>
+    </ul>
+    <div class="hero__grid">
+      <div>
+        <h1 id="hero-title">AI Training</h1>
+        <p class="hero__kicker">For company owners</p>
+        <p class="hero__lead">Two hands-on days to build the right way of thinking about AI, apply it to your own work, and become the leader who adopts it first.</p>
+        <dl class="facts">
+          <div class="wide"><dt class="label">When</dt><dd>Saturday 21 &amp; Sunday 22 November 2026</dd></div>
+          <div><dt class="label">Where</dt><dd>Kalika Steels<small>Jalna</small></dd></div>
+          <div><dt class="label">Fee</dt><dd>₹3,499<small>Inclusive of all taxes</small></dd></div>
+        </dl>
+        <a class="btn btn--on-brand" href="#register">Reserve your seat
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <p class="hero__note">Bring your laptop. Pay online or in cash.</p>
+      </div>
+      <div class="trainer-chip">
+        <img src="/assets/trainer-mihirr-sose.jpg" alt="" width="72" height="72">
+        <div>
+          <p class="label" style="opacity:.85">Your trainer</p>
+          <p class="name">Mihirr Sose</p>
+          <p class="role">Founder, Day One Consulting · ISB MBA</p>
+          <a href="https://www.linkedin.com/in/mihirrsose/" target="_blank" rel="noopener">View LinkedIn ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="statement">
+  <div class="wrap">
+    <blockquote>
+      Be the leader who adopts AI <span>first.</span> Then let it trickle down.
+      <cite>When the owner knows how to use AI well, the rest of the company follows.</cite>
+    </blockquote>
+  </div>
+</div>
 
 <main>
-  <div class="wrap">
-    <section aria-labelledby="about-title">
-      <h2 id="about-title">The workshop</h2>
-      <p class="lead">This is a very hands-on workshop, held on 21 &amp; 22 November 2026 at Kalika Steels, Jalna.</p>
-      <p class="lead"><strong>Participants must bring their laptops.</strong></p>
-      <p class="lead">We'll run through everything: best practices for using AI, and how to use it to 100x productivity in their own job.</p>
-    </section>
+  <section class="block" aria-labelledby="learn-title">
+    <div class="wrap">
+      <p class="label section-label">What you will take away</p>
+      <h2 id="learn-title">The approach, not just the tools</h2>
+      <p class="intro">We will introduce you to the tools. But the two days are mostly about the approach: the mental framework that helps you get real value out of AI, in your own job and across your business.</p>
+      <ol class="takeaways">
+        <li><span class="n">01</span><div><h3>A mental framework for AI</h3><p>A clear way to think about what AI is good at, so you can use any tool better.</p></div></li>
+        <li><span class="n">02</span><div><h3>Cut through the noise</h3><p>There is a lot of noise around AI. Learn to understand it clearly and decide for yourself what works for you and what does not.</p></div></li>
+        <li><span class="n">03</span><div><h3>Where to use it, and where not to</h3><p>Choose the parts of your work and business where AI helps, and recognise the places where it does not belong.</p></div></li>
+        <li><span class="n">04</span><div><h3>Your own job, first</h3><p>Apply AI to the work you do every day and raise your own productivity, hands-on, on your own laptop.</p></div></li>
+        <li><span class="n">05</span><div><h3>Lead the adoption</h3><p>Go back as the person in your company who uses AI first and best, and let it trickle down to your team.</p></div></li>
+      </ol>
+      <div class="format">
+        <div><span class="big">2 days</span><p>Sat 21 &amp; Sun 22 Nov</p></div>
+        <div><span class="big">Hands-on</span><p>You work on your own tasks</p></div>
+        <div><span class="big">Laptop</span><p>Bring yours. It is required</p></div>
+      </div>
+    </div>
+  </section>
 
-    <section aria-labelledby="register-title">
+  <section class="block" aria-labelledby="trainer-title">
+    <div class="wrap">
+      <h2 id="trainer-title">Meet your trainer</h2>
+      <div class="trainer">
+        <img class="trainer__photo" src="/assets/trainer-mihirr-sose.jpg" alt="Mihirr Sose" width="336" height="370" loading="lazy">
+        <div>
+          <p class="trainer__name">Mihirr Sose</p>
+          <p class="trainer__role">Founder, Day One Consulting</p>
+          <p class="trainer__bio">An engineer from VNIT Nagpur with an MBA from ISB. Mihirr worked at Tata Motors, led growth and customer success at startups, and founded Furritas before starting Day One Consulting. Today he trains founders, professionals, corporate teams and students to put AI to work.</p>
+          <a class="linkedin" href="https://www.linkedin.com/in/mihirrsose/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+            Mihirr on LinkedIn ↗
+          </a>
+          <ol class="path" aria-label="Career path">
+            <li>VNIT Nagpur</li><li>Tata Motors</li><li>MBA, ISB</li><li>Startups: growth &amp; customer success</li><li>Founder, Furritas</li><li>Founder, Day One Consulting</li>
+          </ol>
+        </div>
+      </div>
+      <div class="impact">
+        <div class="stat"><span class="num">147</span><span class="what">Corporate team members</span><p>AI bootcamps at 2 companies: GEP Global and BSV Mankind Pharma.</p></div>
+        <div class="stat"><span class="num">900+</span><span class="what">Students</span><p>"AI Fluency" course at KRM University, Jan–Apr 2026.</p></div>
+        <div class="stat"><span class="num">78</span><span class="what">Professionals</span><p>Vibe-coding across product, consulting and sales.</p></div>
+        <div class="stat"><span class="num">12</span><span class="what">Founders</span><p>Built their first product (MVP) with AI tools.</p></div>
+        <div class="stat"><span class="num">2</span><span class="what">Hackathons hosted</span><p>At KRM University and Insurity.</p></div>
+        <div class="stat"><span class="num">3</span><span class="what">Demo sessions</span><p>ISB AI Summit, The Product Folks, The Builder's Club.</p></div>
+      </div>
+      <p class="source-note">Figures are from Day One Consulting's own impact summary.</p>
+    </div>
+  </section>
+
+  <section class="block register" id="register" aria-labelledby="register-title">
+    <div class="wrap register__grid">
+      <div class="register__aside">
+        <p class="label section-label">Reserve your seat</p>
+        <p class="price">₹3,499<small>Per person, inclusive of all taxes</small></p>
+        <ul class="checklist">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Saturday 21 &amp; Sunday 22 November 2026</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Kalika Steels, Jalna</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Two full hands-on days with Mihirr Sose</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Pay online now, or register and pay in cash</li>
+        </ul>
+        <div class="help-box">
+          <p>Need help? Call Krishna Jindal on <a href="tel:+919730922589">97309 22589</a>.</p>
+        </div>
+      </div>
+
       <div class="card">
         <div id="view-form">
           <h2 id="register-title">Register</h2>
+          <p class="card__sub">Takes about two minutes. All fields are required.</p>
           <form id="reg-form" novalidate>
             <div class="field">
               <label class="label" for="f-name">Full name</label>
               <input id="f-name" name="name" type="text" autocomplete="name" maxlength="100" required aria-describedby="e-name">
               <p class="error" id="e-name" hidden></p>
             </div>
-            <div class="field">
-              <label class="label" for="f-email">Email</label>
-              <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="254" required aria-describedby="e-email">
-              <p class="error" id="e-email" hidden></p>
+            <div class="two">
+              <div class="field">
+                <label class="label" for="f-phone">Mobile</label>
+                <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="e.g. 98765 43210" required aria-describedby="e-phone">
+                <p class="error" id="e-phone" hidden></p>
+              </div>
+              <div class="field">
+                <label class="label" for="f-email">Email</label>
+                <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="254" required aria-describedby="e-email">
+                <p class="error" id="e-email" hidden></p>
+              </div>
+            </div>
+            <div class="two">
+              <div class="field">
+                <label class="label" for="f-company">Company</label>
+                <input id="f-company" name="company" type="text" autocomplete="organization" maxlength="150" required aria-describedby="e-company">
+                <p class="error" id="e-company" hidden></p>
+              </div>
+              <div class="field">
+                <label class="label" for="f-role">Your role</label>
+                <input id="f-role" name="role" type="text" autocomplete="organization-title" maxlength="100" placeholder="e.g. Owner, Director" required aria-describedby="e-role">
+                <p class="error" id="e-role" hidden></p>
+              </div>
             </div>
             <div class="field">
-              <label class="label" for="f-phone">Phone</label>
-              <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="e.g. 98765 43210" required aria-describedby="h-phone e-phone">
-              <p class="hint" id="h-phone">10-digit Indian mobile number.</p>
-              <p class="error" id="e-phone" hidden></p>
-            </div>
-            <div class="field">
-              <label class="label" for="f-company">Company</label>
-              <input id="f-company" name="company" type="text" autocomplete="organization" maxlength="150" required aria-describedby="e-company">
-              <p class="error" id="e-company" hidden></p>
-            </div>
-            <div class="field">
-              <label class="label" for="f-role">Role</label>
-              <input id="f-role" name="role" type="text" autocomplete="organization-title" maxlength="100" placeholder="e.g. Plant Manager" required aria-describedby="e-role">
-              <p class="error" id="e-role" hidden></p>
-            </div>
-            <div class="field">
-              <label class="label" for="f-expectations">What do you expect from the workshop?</label>
-              <textarea id="f-expectations" name="expectations" maxlength="1500" required aria-describedby="h-expectations e-expectations"></textarea>
+              <div class="field-head">
+                <label class="label" for="f-expectations">What do you want from these two days?</label>
+                <button class="mic" id="mic" type="button" aria-pressed="false" aria-controls="f-expectations" hidden>
+                  <span class="mic__dot" aria-hidden="true"></span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M8.5 21h7"/></svg>
+                  <span id="mic-label">Speak</span>
+                </button>
+              </div>
+              <textarea id="f-expectations" name="expectations" maxlength="1500" required aria-describedby="h-expectations mic-status e-expectations" placeholder="e.g. I want to use AI for reports and planning, and decide where it fits in my plant."></textarea>
+              <p class="mic-status" id="mic-status" aria-live="polite" hidden></p>
               <div class="row-between">
-                <p class="hint" id="h-expectations">What you want to be able to do after these two days.</p>
+                <p class="hint" id="h-expectations"><span id="hint-type">Type your answer</span><span id="hint-speak" hidden>Type, or tap Speak and talk. We will write it down for you</span>.</p>
                 <p class="hint" aria-hidden="true"><span id="count">0</span>/1500</p>
               </div>
               <p class="error" id="e-expectations" hidden></p>
             </div>
             <fieldset class="field">
-              <legend class="label">Payment</legend>
+              <legend class="label">How would you like to pay?</legend>
               <div class="options">
                 <label class="option">
                   <input type="radio" name="paymentMethod" value="online" checked>
@@ -318,12 +579,12 @@ footer p { margin: 0; font-size: 13px; line-height: 20px; color: var(--ink-muted
                 </label>
                 <label class="option">
                   <input type="radio" name="paymentMethod" value="cash">
-                  <span><strong>Pay in cash</strong><span>Register now and pay ₹3,499 in cash.</span></span>
+                  <span><strong>Pay in cash</strong><span>Register now, pay ₹3,499 in cash later.</span></span>
                 </label>
               </div>
             </fieldset>
             <button class="btn btn--primary" id="submit" type="submit">Continue to payment · ₹3,499</button>
-            <p class="form-foot" id="form-foot">All fields are required.</p>
+            <p class="form-foot">Payments are processed securely by Razorpay.</p>
           </form>
         </div>
 
@@ -334,11 +595,11 @@ footer p { margin: 0; font-size: 13px; line-height: 20px; color: var(--ink-muted
 
         <div id="view-paid" class="panel" hidden tabindex="-1">
           <p class="status status--ok label">Payment received</p>
-          <h2>You are registered</h2>
+          <h2>Your seat is confirmed</h2>
           <p>Your registration ID:</p>
           <output class="regid" data-regid></output>
           <p>Keep this ID for your records. Razorpay usually emails a payment receipt to <strong data-email></strong>.</p>
-          <p>See you on 21 November at Kalika Steels, Jalna. Bring your laptop.</p>
+          <p>See you on Saturday, 21 November at Kalika Steels, Jalna. Bring your laptop.</p>
         </div>
 
         <div id="view-unconfirmed" class="panel" hidden tabindex="-1">
@@ -347,7 +608,7 @@ footer p { margin: 0; font-size: 13px; line-height: 20px; color: var(--ink-muted
           <p>Razorpay finished the payment, but this page could not confirm it. If money left your account, it is recorded against your registration automatically. You do not need to pay again.</p>
           <p>Your registration ID:</p>
           <output class="regid" data-regid></output>
-          <p>If anything looks wrong, contact Krishna Jindal on <a href="tel:+919730922589">9730922589</a> and quote this ID.</p>
+          <p>If anything looks wrong, call Krishna Jindal on <a href="tel:+919730922589">97309 22589</a> and quote this ID.</p>
         </div>
 
         <div id="view-cash" class="panel" hidden tabindex="-1">
@@ -385,31 +646,37 @@ footer p { margin: 0; font-size: 13px; line-height: 20px; color: var(--ink-muted
           </div>
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <p>Questions: Krishna Jindal, <a href="tel:+919730922589">9730922589</a></p>
+    <p><strong>MonoEdge</strong> · AI intelligence for Indian manufacturing: turning data into intelligence. <a href="https://monoedge.in" target="_blank" rel="noopener">monoedge.in</a></p>
+    <p>Questions: Krishna Jindal, <a href="tel:+919730922589">97309 22589</a></p>
   </div>
 </footer>
 
+<div class="sticky-cta" id="sticky-cta">
+  <p><strong>₹3,499</strong>Sat 21 &amp; Sun 22 Nov · Jalna</p>
+  <a class="btn btn--primary" href="#register">Register</a>
+</div>
+
 <script type="module">
-import { validateRegistration } from '/lib/validate.js';
+import { LIMITS, validateRegistration } from '/lib/validate.js';
 
 const form = document.getElementById('reg-form');
 const submit = document.getElementById('submit');
 const views = ['form', 'processing', 'paid', 'unconfirmed', 'cash', 'dismissed', 'error'];
 const FIELDS = ['name', 'email', 'phone', 'company', 'role', 'expectations'];
 let busy = false;
-let pending = null; // { order, registrationId, email } for the current online attempt
+let pending = null; // { order, registrationId } for the current online attempt
 
 function show(name) {
   for (const v of views) document.getElementById(`view-${v}`).hidden = v !== name;
   const el = document.getElementById(`view-${name}`);
-  if (name !== 'form') el.focus();
-  el.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  if (name !== 'form') el.focus({ preventScroll: true });
+  document.getElementById('register').scrollIntoView({ block: 'start' });
 }
 
 function processing(text) {
@@ -469,7 +736,7 @@ async function post(path, body) {
 }
 
 function openCheckout() {
-  const { order, registrationId, email } = pending;
+  const { order, registrationId } = pending;
   if (typeof window.Razorpay !== 'function') {
     fail('Payment window did not load',
       `The Razorpay payment window could not load. This can happen on a slow or filtered connection. Your details are saved under registration ID ${registrationId}. Reload the page and try again, or choose to pay in cash.`);
@@ -482,7 +749,7 @@ function openCheckout() {
     amount: order.amount,
     currency: order.currency,
     name: 'AI Training',
-    description: '21 & 22 Nov 2026 · Kalika Steels, Jalna',
+    description: 'Sat 21 & Sun 22 Nov 2026 · Kalika Steels, Jalna',
     prefill: order.prefill,
     notes: { registration_id: registrationId },
     theme: { color: '#204494' },
@@ -506,6 +773,7 @@ function openCheckout() {
 async function onSubmit(event) {
   event.preventDefault();
   if (busy) return;
+  dictation.stop();
   const input = payload();
   const check = validateRegistration(input);
   setErrors(check.ok ? {} : check.errors);
@@ -531,7 +799,7 @@ async function onSubmit(event) {
     if (cash) {
       show('cash');
     } else {
-      pending = { order: data, registrationId: data.registrationId, email: check.data.email };
+      pending = { order: data, registrationId: data.registrationId };
       openCheckout();
     }
   } catch {
@@ -542,6 +810,98 @@ async function onSubmit(event) {
     submit.disabled = false;
   }
 }
+
+// ---- Voice input for the expectations box (browser speech-to-text) ----
+// Each recognition session captures one utterance and is restarted while the user keeps
+// the mic on. Continuous mode is avoided because Chrome on Android repeats earlier results
+// inside later ones, which would duplicate text.
+const dictation = (() => {
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  const area = form.elements.expectations;
+  const btn = document.getElementById('mic');
+  const label = document.getElementById('mic-label');
+  const status = document.getElementById('mic-status');
+  let rec = null;
+  let on = false;
+  let base = '';
+
+  function setStatus(text) {
+    status.textContent = text;
+    status.hidden = !text;
+  }
+  function render(text) {
+    area.value = text.slice(0, LIMITS.expectations);
+    area.dispatchEvent(new Event('input'));
+  }
+  function joined(a, b) {
+    if (!a) return b.trim();
+    if (!b.trim()) return a;
+    return `${a.replace(/\s+$/, '')} ${b.trim()}`;
+  }
+  function setOn(value) {
+    on = value;
+    btn.setAttribute('aria-pressed', String(value));
+    label.textContent = value ? 'Stop' : 'Speak';
+  }
+  function startSession() {
+    rec = new SR();
+    rec.lang = 'en-IN';
+    rec.continuous = false;
+    rec.interimResults = true;
+    rec.onresult = (e) => {
+      let text = '';
+      let final = true;
+      for (const result of e.results) {
+        text += result[0].transcript;
+        if (!result.isFinal) final = false;
+      }
+      render(joined(base, text));
+      if (final) base = area.value;
+    };
+    rec.onerror = (e) => {
+      if (e.error === 'no-speech' || e.error === 'aborted') return;
+      setOn(false);
+      setStatus(e.error === 'not-allowed' || e.error === 'service-not-allowed'
+        ? 'Microphone access is blocked. Allow it in your browser settings, or type your answer.'
+        : 'Voice input stopped working. You can type your answer instead.');
+    };
+    rec.onend = () => {
+      base = area.value;
+      // When off, leave the status alone: stop() already cleared it, and after an error
+      // it holds the message the user needs to see.
+      if (on) {
+        try { startSession(); } catch { setOn(false); setStatus(''); }
+      }
+    };
+    rec.start();
+  }
+  function start() {
+    base = area.value;
+    setOn(true);
+    setStatus('Listening. Speak naturally, then tap Stop.');
+    try { startSession(); } catch { setOn(false); setStatus('Voice input could not start. You can type your answer instead.'); }
+  }
+  function stop() {
+    if (!on) return;
+    setOn(false);
+    setStatus('');
+    rec?.stop();
+  }
+
+  if (SR) {
+    btn.hidden = false;
+    document.getElementById('hint-type').hidden = true;
+    document.getElementById('hint-speak').hidden = false;
+    btn.addEventListener('click', () => (on ? stop() : start()));
+  }
+  return { stop };
+})();
+
+// ---- Sticky register bar: hidden while the registration card is on screen ----
+const sticky = document.getElementById('sticky-cta');
+new IntersectionObserver(([entry]) => {
+  sticky.classList.toggle('is-hidden', entry.isIntersecting);
+}, { threshold: 0.05 }).observe(document.getElementById('register'));
 
 form.addEventListener('submit', onSubmit);
 form.addEventListener('change', (e) => { if (e.target.name === 'paymentMethod') syncSubmitLabel(); });

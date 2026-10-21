@@ -19,6 +19,7 @@ After each case, check the sheet row and the webhook delivery log:
 | 6 | Cash registration | Register with "Pay in cash" | Page shows the JSC Seed Private Limited instructions and the ID. Row has `cash` / `cash_pending`, with no order ID |
 | 7 | Invalid inputs | Empty form; phone `12345`; bad email; 1,501-character expectations. Also post junk straight to `/api/create-order` with curl | Field messages on the page; nothing sent. The API returns `400` with field errors, and no row or Razorpay order is created |
 | 8 | Late failure never downgrades | Covered by automated tests (`webhook: late failed event never overwrites paid`, `…racing a capture restores paid`) | `paid` stays `paid` |
+| 10 | Voice input | On an Android phone in Chrome, tap Speak in the expectations box, allow the microphone, say a sentence, tap Stop. Repeat on an iPhone | Spoken text appears in the box, appended to anything already typed, with no repeated words. If the microphone is denied, a clear message appears. On browsers without speech recognition, the button is hidden |
 | 9 | Manual cash update | Change a `cash_pending` row to `cash_received` in the sheet | Nothing in the app overwrites it |
 
 ## Results
@@ -43,7 +44,15 @@ Recorded 21 Oct 2026.
   - sheet outage → `500`
   - cash rows never touched
   - IST timestamps
-- **Browser run (Chromium, 390 px and 320 px wide, light and dark): 21 of 21 checks pass.** Real
+- **Browser run after the redesign (Chromium at 320, 390 and 1280 px, light and dark): 34 of 34 checks pass.** Added checks:
+  - voice input with a simulated recognizer: appends to typed text with no duplication, counter updates, stop works
+  - denied microphone shows a message
+  - mic hidden when the browser lacks speech recognition
+  - sticky register bar hides over the form
+  - Saturday/Sunday dates, contact, website and trainer LinkedIn present
+
+  Real speech recognition was not tested; it needs a real phone and microphone (case 10).
+- **Earlier browser run (Chromium, 390 px and 320 px wide, light and dark): 21 of 21 checks pass.** Real
   page, real API handlers, fake sheet, stubbed Razorpay Checkout. Covered:
   - no horizontal scroll
   - client-side errors with no request sent
