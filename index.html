@@ -51,20 +51,31 @@ a { color: var(--blue); }
 .container { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
 .eyebrow { font-family: var(--mono); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 12px; color: var(--blue); }
 
-/* ---------- Header ---------- */
+/* ---------- Header ----------
+   Every item is a single line on one shared centre line, 40px tall. */
 .header { background: #fff; border-bottom: 1px solid var(--line); }
-.header__row { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 60px; }
+.header__bar { display: flex; flex-wrap: wrap; align-items: center; column-gap: 12px; min-height: 64px; }
+.header__logo { display: flex; align-items: center; height: 40px; margin-right: auto; }
 .header__logo img { height: 20px; width: auto; }
-.header__right { display: flex; align-items: center; gap: 20px; font-size: 14px; }
-.header__site { color: var(--ink-2); text-decoration: none; font-weight: 500; }
+.header__site, .header__call { display: inline-flex; align-items: center; gap: 8px; height: 40px; font-size: 14px; line-height: 1; white-space: nowrap; text-decoration: none; }
+.header__site { color: var(--ink-2); font-weight: 500; padding: 0 4px; }
 .header__site:hover { color: var(--blue); }
-.header__call { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: var(--ink); font-weight: 600; }
-.header__call svg { width: 18px; height: 18px; color: var(--blue); flex: none; }
-.header__call small { display: block; font-size: 12px; font-weight: 500; color: var(--muted); line-height: 1.2; }
-.header__call span { line-height: 1.25; }
-@media (max-width: 560px) { .header__site { display: none; } }
-.header__tagline { border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); padding: 8px 0; margin: 0; }
-.header__tagline a { color: var(--muted); }
+.header__site svg, .header__call svg { width: 16px; height: 16px; flex: none; color: var(--blue); }
+.header__sep { width: 1px; height: 20px; background: var(--line); }
+.header__call { padding: 0 14px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink); font-weight: 500; }
+.header__call:hover { border-color: var(--blue); }
+.header__call b { font-weight: 700; }
+.header__call .muted { color: var(--muted); }
+.header__sub { border-top: 1px solid var(--line); background: var(--bg); }
+.header__tagline { margin: 0 auto; padding-block: 10px; font-size: 13px; line-height: 1.5; color: var(--muted); }
+@media (max-width: 719px) {
+  /* Row 1: logo and website. Row 2: the contact line, full width, left-aligned with the logo. */
+  .header__bar { min-height: 0; padding-top: 10px; }
+  .header__sep { display: none; }
+  .header__call { order: 3; flex-basis: 100%; height: 44px; margin-top: 6px; padding: 0; border: 0; border-top: 1px solid var(--line); border-radius: 0; }
+}
+/* On the narrowest phones the prefix would push the number off screen. */
+@media (max-width: 379px) { .header__q { display: none; } }
 
 /* ---------- Layout: content left, booking card right ---------- */
 .layout { display: grid; grid-template-columns: minmax(0, 1fr); position: relative; z-index: 0; }
@@ -277,19 +288,23 @@ fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
 <div class="page">
 
 <header class="header">
-  <div class="container header__row">
+  <div class="container header__bar">
     <a class="header__logo" href="https://monoedge.in" target="_blank" rel="noopener">
       <img src="/assets/monoedge-lockup-horizontal-dark.png" alt="MonoEdge" width="632" height="91">
     </a>
-    <div class="header__right">
-      <a class="header__site" href="https://monoedge.in" target="_blank" rel="noopener">monoedge.in</a>
-      <a class="header__call" href="tel:+919730922589">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
-        <span><small>Questions? Krishna Jindal</small>97309 22589</span>
-      </a>
-    </div>
+    <a class="header__site" href="https://monoedge.in" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>
+      monoedge.in
+    </a>
+    <span class="header__sep" aria-hidden="true"></span>
+    <a class="header__call" href="tel:+919730922589">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+      <span class="muted header__q">Questions?</span> Krishna Jindal <span class="muted">·</span> <b>97309 22589</b>
+    </a>
   </div>
-  <div class="container"><p class="header__tagline">MonoEdge · AI intelligence for Indian manufacturing: turning data into intelligence. <a href="https://monoedge.in" target="_blank" rel="noopener">monoedge.in</a></p></div>
+  <div class="header__sub">
+    <p class="header__tagline container">MonoEdge · AI intelligence for Indian manufacturing: turning data into intelligence.</p>
+  </div>
 </header>
 
 <div class="container layout">
